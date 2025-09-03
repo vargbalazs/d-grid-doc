@@ -1,0 +1,16 @@
+<kendo-treeview
+  #treeview
+  [nodes]="menuItems"
+  textField="text"
+  kendoTreeViewHierarchyBinding
+  childrenField="items"
+  kendoTreeViewExpandable
+  [(expandedKeys)]="expandedKeys"
+  kendoTreeViewSelectable
+  [(selectedKeys)]="selectedKeys"
+  [animate]="true"
+  [expandOnFilter]="true"
+  (nodeClick)="nodeClick($event)"
+  [isExpanded]="isItemExpanded"
+>
+</kendo-treeview>
