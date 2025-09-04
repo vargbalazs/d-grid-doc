@@ -11,8 +11,9 @@
 }
 
 .k-drawer-content {
-  height: 100%;
-  margin: 1rem;
+  align-self: stretch;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .k-appbar .k-appbar-section {
