@@ -1,0 +1,17 @@
+.k-appbar {
+  box-shadow: none;
+  background-color: var(--teal-mid);
+  height: 4rem;
+  color: white;
+  padding: 0;
+}
+
+.k-drawer-container {
+  height: 100%;
+}
+
+.k-appbar .k-appbar-section {
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 1rem;
+}

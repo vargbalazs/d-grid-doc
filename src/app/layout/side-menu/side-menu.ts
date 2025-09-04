@@ -1,16 +1,18 @@
 import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import { KENDO_TREEVIEW, TreeViewComponent } from '@progress/kendo-angular-treeview';
 import { MenuItem } from '../interfaces/menu-item';
+import { menuItems } from './side-menu-items';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'side-menu',
-  imports: [KENDO_TREEVIEW],
+  imports: [CommonModule, KENDO_TREEVIEW],
   templateUrl: './side-menu.html',
   styleUrl: './side-menu.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent {
-  menuItems: MenuItem[] = [];
+  menuItems: MenuItem[] = menuItems;
   expandedKeys: string[] = [];
   selectedKeys: string[] = [];
 

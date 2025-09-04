@@ -13,4 +13,7 @@
   (nodeClick)="nodeClick($event)"
   [isExpanded]="isItemExpanded"
 >
+  <ng-template kendoTreeViewNodeTemplate let-dataItem>
+    <span [ngClass]="{ title: dataItem.isTitle }">{{ dataItem.text }}</span>
+  </ng-template>
 </kendo-treeview>

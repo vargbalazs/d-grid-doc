@@ -1,0 +1,49 @@
+kendo-treeview span[class*='fi-rs-']:before {
+  font-weight: 800 !important;
+}
+
+.k-treeview-leaf {
+  font-weight: bold;
+}
+
+.k-treeview-leaf.k-selected,
+.k-treeview-leaf:hover {
+  color: var(--golden-mid);
+  background-color: var(--golden-light-alpha);
+}
+
+.k-treeview-leaf:hover {
+  cursor: pointer;
+}
+
+.k-treeview-leaf.k-focus {
+  box-shadow: none;
+}
+
+[kendotreeviewitemcontent] {
+  flex: 1;
+}
+
+[kendotreeviewitem][aria-level='2'] {
+  padding-left: 0.5rem;
+}
+
+[kendotreeviewitem][aria-level='1']:not(:has(.k-treeview-toggle)) {
+  padding-left: 0;
+}
+
+.k-treeview-leaf .title {
+  text-transform: uppercase;
+}
+
+[kendotreeviewitem][aria-level='1']:has(.k-treeview-toggle) {
+  padding-left: 2rem;
+}
+
+[kendotreeviewitem][aria-level='1']:has(.k-treeview-leaf .title) {
+  color: var(--grey-title);
+}
+
+[kendotreeviewitem][aria-level='1']:not(:has(.k-treeview-leaf .title)) {
+  color: var(--grey-text);
+}

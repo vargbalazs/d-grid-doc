@@ -1,0 +1,13 @@
+@import './root.css';
+@import './layout.css';
+@import './treeview.css';
+
+div[style^='display: flex'],
+div[kendowatermarkoverlay] {
+  display: none !important;
+}
+
+body {
+  margin: 0px;
+  box-sizing: border-box;
+}
