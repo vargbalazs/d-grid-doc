@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { KENDO_DRAWER } from '@progress/kendo-angular-layout';
 import { SideMenuComponent } from '../side-menu/side-menu';
 
@@ -7,5 +7,6 @@ import { SideMenuComponent } from '../side-menu/side-menu';
   imports: [KENDO_DRAWER, SideMenuComponent],
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavBarComponent {}

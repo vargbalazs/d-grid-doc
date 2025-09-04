@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AppBarComponent } from '../app-bar/app-bar';
 import { NavBarComponent } from '../nav-bar/nav-bar';
 
@@ -7,5 +7,6 @@ import { NavBarComponent } from '../nav-bar/nav-bar';
   imports: [AppBarComponent, NavBarComponent],
   templateUrl: './main.html',
   styleUrl: './main.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainLayoutComponent {}
