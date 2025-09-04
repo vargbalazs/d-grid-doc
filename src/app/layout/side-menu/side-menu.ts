@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Inject, ViewChild } from '@angular/core';
 import { KENDO_TREEVIEW, TreeViewComponent } from '@progress/kendo-angular-treeview';
 import { MenuItem } from '../interfaces/menu-item';
 import { menuItems } from './side-menu-items';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'side-menu',
@@ -20,20 +21,18 @@ export class SideMenuComponent {
 
   @ViewChild('treeview') treeview!: TreeViewComponent;
 
+  router = inject(Router);
+
   nodeClick(e: any) {
     const item = e.item.dataItem as MenuItem;
     const index = e.item.index;
     if (this.isItemExpanded(item, index)) {
       this.treeview.collapseNode(item, index);
     } else {
-      //   if (!this.layoutService.navbarIsOpen) this.layoutService.toggleNavBarPanel();
-      //   {
       this.treeview.expandNode(item, index);
-      //   }
     }
-    // if (item.routePath) {
-    //   this.router.navigate([item.routePath], { skipLocationChange: true });
-    //   this.layoutService.toggleNavBarPanel();
-    // }
+    if (item.routePath) {
+      this.router.navigate([item.routePath], { skipLocationChange: true });
+    }
   }
 }

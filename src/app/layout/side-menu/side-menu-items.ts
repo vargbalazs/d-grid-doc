@@ -2,7 +2,7 @@ import { MenuItem } from '../interfaces/menu-item';
 
 export const menuItems: MenuItem[] = [
   { text: 'Getting started', isTitle: true },
-  { text: 'Introduction' },
+  { text: 'Introduction', routePath: 'docs/introduction' },
   { text: 'Quick Start' },
   { text: 'Key Features' },
   { text: 'Layout & Styling', isTitle: true },
