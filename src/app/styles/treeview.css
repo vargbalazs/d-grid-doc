@@ -7,9 +7,15 @@ kendo-treeview span[class*='fi-rs-']:before {
 }
 
 .k-treeview-leaf.k-selected,
-.k-treeview-leaf:hover {
+.k-treeview-leaf:not(:has(.title)):hover {
   color: var(--golden-mid);
   background-color: var(--golden-light-alpha);
+}
+
+.k-treeview-leaf:has(.title):hover {
+  cursor: default;
+  background-color: white;
+  color: var(--grey-title);
 }
 
 .k-treeview-leaf:hover {
