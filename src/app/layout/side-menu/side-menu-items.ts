@@ -10,7 +10,14 @@ export const menuItems: MenuItem[] = [
   { text: 'Design System' },
   { text: 'Grid Layout' },
   { text: 'Core Features', isTitle: true },
-  { text: 'Columns', items: [{ text: 'Configuration' }, { text: 'Headers' }, { text: 'Sizing' }] },
+  {
+    text: 'Columns',
+    items: [
+      { text: 'Configuration', routePath: 'docs/column-config' },
+      { text: 'Headers' },
+      { text: 'Sizing' },
+    ],
+  },
   { text: 'Rows', items: [{ text: 'Data' }] },
   { text: 'Cells', items: [{ text: 'Cell Content' }] },
   { text: 'Filtering', items: [{ text: 'Overview' }] },

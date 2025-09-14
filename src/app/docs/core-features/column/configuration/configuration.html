@@ -1,0 +1,27 @@
+<h1>Column configuration</h1>
+<h2>Define columns</h2>
+<p>
+  You can define the grid columns <b>either with an input property</b>, which is linked to an array,
+  or using <b><code>d-grid-column</code></b> elements.
+</p>
+<h3>Define columns with input</h3>
+<p>
+  To define columns with an input property you have to <b>define a column array</b> first, which has
+  to be a <b>signal array</b>, f. e.:
+</p>
+<code-block [code]="columnDef" [language]="'typescript'" [showLineNumbers]="true"></code-block>
+<p>
+  The library exposes the <b><code>DGridColumn</code></b> interface, which has the following
+  members:
+</p>
+<ul>
+  <li>
+    <b>field</b>: <span class="required">required</span> / defines the field to be shown from the
+    data source
+  </li>
+  <li><b>header</b>: <span class="required">required</span> / defines the header text</li>
+  <li><b>sortable</b>: defines the sortable behaviour of the grid (for more see 'Sorting')</li>
+  <li><b>width</b>: defines the width of the column</li>
+  <li><b>autosize</b>: defines whether the column resizes based on it's content</li>
+  <li><b>hidden</b>: defines whether the column should be not visible</li>
+</ul>

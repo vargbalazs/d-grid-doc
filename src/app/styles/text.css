@@ -2,12 +2,15 @@ h1 {
   color: var(--teal-mid);
 }
 
-h2 {
+h2,
+h3 {
   color: var(--grey-title);
 }
 
-p {
+p,
+li {
   line-height: 1.5rem;
+  color: var(--grey-text);
 }
 
 b {
@@ -15,4 +18,11 @@ b {
   background-color: var(--teal-mid-alpha);
   padding: 0.1rem;
   border-radius: 0.2rem;
+}
+
+.required {
+  text-transform: uppercase;
+  color: crimson;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
