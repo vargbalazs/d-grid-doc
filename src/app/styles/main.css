@@ -1,6 +1,9 @@
+@import 'highlight.js/styles/intellij-light.css';
 @import './root.css';
 @import './layout.css';
 @import './treeview.css';
+@import './text.css';
+@import './highlight.css';
 
 div[style^='display: flex'],
 div[kendowatermarkoverlay] {

@@ -1,0 +1,18 @@
+h1 {
+  color: var(--teal-mid);
+}
+
+h2 {
+  color: var(--grey-title);
+}
+
+p {
+  line-height: 1.5rem;
+}
+
+b {
+  color: var(--teal-mid);
+  background-color: var(--teal-mid-alpha);
+  padding: 0.1rem;
+  border-radius: 0.2rem;
+}

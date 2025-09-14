@@ -1,1 +1,23 @@
-intro
+<h1>DataGrid aka DGrid - the new grid library out there</h1>
+<h2>General purpose</h2>
+<p>
+  This grid library was born in order to have a performant grid library, which
+  <b>don't use zone.js</b>, <b>uses OnPush change detection</b> and <b>uses signals</b> internally
+  and also externally for it's inputs (if it makes sense). The grid library was
+  <b>written in Angular</b> for only Angular.
+</p>
+<h2>Dependencies</h2>
+<p>As for now, the library uses the following dependencies:</p>
+<ul>
+  <li><b>uuid:</b> for generating unique ids for columns and rows</li>
+</ul>
+<h2>Internal structure</h2>
+<p>
+  The grid uses the <b>modern css grid layout with divs</b> instead of classic table elements like
+  &lt;th&gt;, &lt;tr&gt; and &lt;td&gt;. Only the <b>main semantic elements</b> (header, body,
+  footer) are <b>real Angular components</b> in order to minimize change detection overhead and have
+  better performance.
+</p>
+<h2>Main layout structure</h2>
+<p>The main layout structure looks like this:</p>
+<code-block [code]="gridStructureHtml" [language]="'html'" [showLineNumbers]="true"></code-block>
