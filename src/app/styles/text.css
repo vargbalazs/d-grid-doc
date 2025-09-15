@@ -26,3 +26,8 @@ b {
   font-weight: bold;
   font-size: 0.9rem;
 }
+
+a {
+  color: var(--teal-mid);
+  font-weight: bold;
+}

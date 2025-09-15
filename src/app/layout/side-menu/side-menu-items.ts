@@ -15,7 +15,7 @@ export const menuItems: MenuItem[] = [
     items: [
       { text: 'Configuration', routePath: 'docs/column-config' },
       { text: 'Headers' },
-      { text: 'Sizing' },
+      { text: 'Sizing', routePath: 'docs/column-sizing' },
     ],
   },
   { text: 'Rows', items: [{ text: 'Data' }] },

@@ -28,4 +28,13 @@ export class ColumnConfigComponent {
     },
   ]);
     `;
+  
+  columnDefInTemplate=`
+  <d-grid>
+    <d-grid-column field="id" header="id" [width]="50"></d-grid-column>
+    <d-grid-column field="name" header="name" [width]="100"></d-grid-column>
+    <d-grid-column field="email" header="email" [width]="150"></d-grid-column>
+    <d-grid-column field="active" header="active" [width]="100"></d-grid-column>
+  </d-grid>
+  `
 }

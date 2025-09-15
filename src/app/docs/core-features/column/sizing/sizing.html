@@ -1,0 +1,38 @@
+<h1>Column sizing</h1>
+<h2>Column width</h2>
+<p>
+  As described in the <a routerLink="/docs/column-config">Configuration</a> section you can set the
+  width of a column either by setting the <b>width</b> property on the column object in a signal
+  array or by setting the same property on a <b><code>d-grid-column</code></b> element.
+</p>
+<p>The following rules apply:</p>
+<ul>
+  <li>
+    When all column widths are explicitly set and the cumulative column width is greater than the
+    available grid width, a horizontal scrollbar appears and all set column widths are respected.
+  </li>
+  <li>
+    When all column widths are explicitly set and the cumulative column width is less than the
+    available grid width, the remaining width is distributed evenly between all columns.
+  </li>
+  <li>
+    When no column widths are set, the available width is distributed evenly between all grid
+    columns, maintaining a minimum width of <b>50px</b> if not overridden by the
+    <b>minAutoColWidth</b> global input property. If <b>autosize</b> is set, the width of the
+    maximum content (header, body, footer) will be respected.
+  </li>
+  <li>
+    When only some column widths are set and the cumulative width of the columns with set widths is
+    greater than the available grid width, a horizontal scrollbar appears and all set column widths
+    are respected. Columns with no set width are rendered with a defined minimum width
+    <b>50px</b> if not overridden by the <b>minAutoColWidth</b> global input property. If
+    <b>autosize</b>
+    is set, the width of the maximum content (header, body, footer) will be respected.
+  </li>
+  <li>
+    When only some column widths are set and the cumulative width of columns with set widths is less
+    than the available grid width, the widths of the columns with a set width are respected and the
+    remaining width is distributed evenly between the other columns. If <b>autosize</b> is set, the
+    width of the maximum content (header, body, footer) will be respected.
+  </li>
+</ul>
