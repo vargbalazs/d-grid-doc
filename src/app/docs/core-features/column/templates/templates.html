@@ -1,0 +1,30 @@
+<h1>Column templates</h1>
+<p>We can define column templates for <b>header</b>, <b>cell</b> and <b>footer</b>.</p>
+<h2>Header template</h2>
+<p>
+  To define a header template use the <b><code>dGridHeaderTemplate</code></b> directive like this:
+</p>
+<code-block [code]="headerTemplate" language="html" [showLineNumbers]="true"></code-block>
+<p>
+  In the header template you can access the <b><code>column</code></b> object to use properties from
+  the interface.
+</p>
+<h2>Cell template</h2>
+<p>
+  You can also define a cell template using the <b><code>dGridCellTemplate</code></b> directive in
+  the following way:
+</p>
+<code-block [code]="cellTemplate" language="html" [showLineNumbers]="true"></code-block>
+<p>
+  In the cell template you have access to the actual processed data item and also to the
+  <b><code>column</code></b> object.
+</p>
+<h2>Footer template</h2>
+<p>
+  In order to define a footer template use the <b><code>dGridFooterTemplate</code></b> directive:
+</p>
+<code-block [code]="footerTemplate" language="html" [showLineNumbers]="true"></code-block>
+<p>
+  In the footer template you can access the <b><code>column</code></b> object to use properties from
+  the interface.
+</p>

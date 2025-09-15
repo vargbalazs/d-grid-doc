@@ -1,0 +1,61 @@
+<h1>Row data</h1>
+<p>
+  Since the core concept of the grid is around <b>signals</b>, defining the grid data happens also
+  with signals. You can assign to the grid <b>static</b> or <b>asynchronous</b> data using the
+  <b><code>data</code></b> input property.
+</p>
+<h2>Static data</h2>
+<p>Usually you would define an <b>interface</b> holding the row data structure, f. e.:</p>
+<code-block [code]="interf" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  After defining the interface and adding some data you can provide a static data source like this:
+</p>
+<code-block [code]="static" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  If everything is done you can then assign the data source to the grid. Don't forget to call the
+  expression to get the data since this is a signal:
+</p>
+<code-block [code]="staticAssign" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  If we want for some reason assign a new static data to the grid, just do it as usual taking into
+  account, that we work with signals:
+</p>
+<code-block [code]="refreshAssign" language="typescript" [showLineNumbers]="true"></code-block>
+<h2>Asynchronous data</h2>
+<p>
+  In most cases you will work with asynchronous data. In this case you have basically two options to
+  define the data source:
+</p>
+<ul>
+  <li><b>subscribe</b> to an observable</li>
+  <li><b>convert</b> an observable <b>to a signal</b></li>
+</ul>
+<p>
+  In both cases you have to add the <b><code>asyncData</code></b> input property to the grid and set
+  it to <b><code>true</code></b
+  >. Otherwise you may encounter non-standard behaviours, f. e. not showing the loading indicator.
+  If you use a <b>static</b> data source, <b>don't specify</b> this property.
+</p>
+<h3>Subscribe to an observable</h3>
+<p>
+  In most common cases you define an observable and subscribe to it f. e. in
+  <b><code>ngOnInit</code></b
+  >:
+</p>
+<code-block [code]="subscribe" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  The assigning in the template remains unchanged (like in the static case). Just don't forget to
+  call the expression.
+</p>
+<p>
+  If you want to reassign a new asynchronous data source to the grid, just subscribe to an another
+  observable. In order to trigger a change detection and also to show the loading indicator,
+  initialize the data source f. e. with an empty array:
+</p>
+<code-block [code]="asyncAssign" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  If you don't want to set the data source f. e. to an empty array, then you have to do the
+  reassigning like this. The only difference is, that you have to set a loading flag and assign it
+  to the <b><code>loading</code></b> input property of the grid.
+</p>
+<code-block [code]="asyncAssignV2" language="typescript" [showLineNumbers]="true"></code-block>
