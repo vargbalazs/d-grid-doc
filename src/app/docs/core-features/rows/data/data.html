@@ -59,3 +59,19 @@
   to the <b><code>loading</code></b> input property of the grid.
 </p>
 <code-block [code]="asyncAssignV2" language="typescript" [showLineNumbers]="true"></code-block>
+<h3>Convert an observable to a signal</h3>
+<p>
+  You can also specify the data source converting an observable to a signal like this and assign it
+  in the known way to the <b><code>data</code></b> property of the grid (don't forget to call it).
+</p>
+<code-block [code]="convertToSignal" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  You don't have to use <b><code>async</code></b> pipe on it, since converting to a signal ensures,
+  that the subscription will be cleaned up. In this case you don't have to use the
+  <b><code>loading</code></b> input property.
+</p>
+<p>
+  Reassigning a new data source to the grid in this way can be also done, but you will have to use
+  <b><code>runInInjectionContext</code></b
+  >.
+</p>

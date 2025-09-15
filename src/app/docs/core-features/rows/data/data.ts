@@ -63,4 +63,10 @@ export class RowDataComponent {
       this.loading = false;
     });
   `;
+
+  convertToSignal = `
+    gridDataSignal = toSignal<Row[], Row[]>(this.gridDataHttp, {
+      initialValue: [],
+    });
+  `;
 }
