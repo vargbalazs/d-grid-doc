@@ -14,4 +14,8 @@ export const routes: Routes = [
     path: '',
     loadChildren: () => import('./core-features/rows/rows.routes').then((m) => m.routes),
   },
+  {
+    path: '',
+    loadChildren: () => import('./layout-styling/layout-styling.routes').then((m) => m.routes),
+  },
 ];

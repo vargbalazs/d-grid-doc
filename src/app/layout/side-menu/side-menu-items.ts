@@ -6,7 +6,7 @@ export const menuItems: MenuItem[] = [
   { text: 'Quick Start' },
   { text: 'Key Features' },
   { text: 'Layout & Styling', isTitle: true },
-  { text: 'Theming' },
+  { text: 'Theming', routePath: 'docs/theming' },
   { text: 'Design System' },
   { text: 'Grid Layout' },
   { text: 'Core Features', isTitle: true },
