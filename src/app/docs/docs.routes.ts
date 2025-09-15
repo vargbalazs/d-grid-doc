@@ -4,6 +4,7 @@ import { ColumnConfigComponent } from './core-features/column/configuration/conf
 import { ColumnSizingComponent } from './core-features/column/sizing/sizing';
 import { ColumnTemplatesComponent } from './core-features/column/templates/templates';
 import { RowDataComponent } from './core-features/rows/data/data';
+import { RowTemplatesComponent } from './core-features/rows/templates/templates';
 
 export const routes: Routes = [
   {
@@ -25,5 +26,9 @@ export const routes: Routes = [
   {
     path: 'row-data',
     component: RowDataComponent,
+  },
+  {
+    path: 'row-templates',
+    component: RowTemplatesComponent,
   },
 ];

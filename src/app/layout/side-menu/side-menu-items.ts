@@ -19,7 +19,13 @@ export const menuItems: MenuItem[] = [
       { text: 'Templates', routePath: 'docs/column-templates' },
     ],
   },
-  { text: 'Rows', items: [{ text: 'Data', routePath: 'docs/row-data' }] },
+  {
+    text: 'Rows',
+    items: [
+      { text: 'Data', routePath: 'docs/row-data' },
+      { text: 'Templates', routePath: 'docs/row-templates' },
+    ],
+  },
   { text: 'Cells', items: [{ text: 'Cell Content' }] },
   { text: 'Filtering', items: [{ text: 'Overview' }] },
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
