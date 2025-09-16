@@ -1,0 +1,20 @@
+<h1>Grid layout</h1>
+<p>
+  As stated in the <a routerLink="/docs/introduction">Introduction</a> section, the grid is composed
+  of a <b>header</b>, a <b>body</b> and a <b>footer</b>.
+</p>
+<p>
+  As per default, the header is sticked to the top. But you will experience this only, if the height
+  of the grid is explicitly set. For your convenience this will be logged also in the console window
+  of the dev tools:
+</p>
+<img src="assets/images/sticky-header-warning.png" alt="Logo" />
+<p>
+  If you want to change that, you can assign to the <b><code>sticky</code></b> input property of the
+  grid a <b><code>DGridSticky</code></b> object. The definition looks like this:
+</p>
+<code-block [code]="sticky" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  As you see, the header is sticky by default. And you don't have to specify both, if you want to
+  change only one of them.
+</p>

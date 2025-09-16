@@ -9,7 +9,7 @@ export const menuItems: MenuItem[] = [
   { text: 'Theming', routePath: 'docs/theming' },
   { text: 'CSS Variables', routePath: 'docs/css-variables' },
   { text: 'Design System' },
-  { text: 'Grid Layout' },
+  { text: 'Grid Layout', routePath: 'docs/grid-layout' },
   { text: 'Core Features', isTitle: true },
   {
     text: 'Columns',
