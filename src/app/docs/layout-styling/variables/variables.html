@@ -1,0 +1,26 @@
+<h1>CSS Variables</h1>
+<p>
+  As mentioned in the <a routerLink="/docs/theming">Theming</a> section, the
+  <b><code>style</code></b> tag holds many variables (internal and for theming).
+</p>
+<h2>Internal variables</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Rule</th>
+      <th>Used For</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (variable of internalVariables; track variable.rule) {
+    <tr>
+      <td>
+        {{ variable.rule }}
+      </td>
+      <td>
+        {{ variable.usedFor }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

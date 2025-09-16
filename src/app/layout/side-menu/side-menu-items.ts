@@ -7,6 +7,7 @@ export const menuItems: MenuItem[] = [
   { text: 'Key Features' },
   { text: 'Layout & Styling', isTitle: true },
   { text: 'Theming', routePath: 'docs/theming' },
+  { text: 'CSS Variables', routePath: 'docs/css-variables' },
   { text: 'Design System' },
   { text: 'Grid Layout' },
   { text: 'Core Features', isTitle: true },

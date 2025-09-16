@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--teal-mid-alpha);
+  color: var(--teal-dark);
+}
+
+thead th {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid var(--teal-mid);
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--teal-mid-alpha);
+}
+
+tbody td {
+  padding: 8px;
+}
+
+tbody tr td:first-child {
+  color: var(--grey-title);
+}
+
+tbody tr td:last-child {
+  color: var(--grey-text);
+}
