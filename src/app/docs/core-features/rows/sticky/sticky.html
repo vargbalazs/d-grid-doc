@@ -1,0 +1,17 @@
+<h1>Sticky rows</h1>
+<p>
+  In order to have sticky rows in the grid, first you have to define a function, wich takes as
+  parameter a <b><code>DGridRow</code></b> object (the actual processed grid row) and returns a
+  boolean, indicating, whether the actual processed row should be sticky or not.
+</p>
+<p>The definition of the function looks like this:</p>
+<code-block [code]="stickyFnDef" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  In order to access the underlying data, you should cast the <b><code>data</code></b> property of
+  the <b><code>DGridRow</code></b> object to your interface. A sample function could look like this:
+</p>
+<code-block [code]="stickyFn" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  Finally you have to assing this function to the <b><code>stickyRows</code></b> input property of
+  the grid.
+</p>

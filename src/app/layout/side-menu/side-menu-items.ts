@@ -25,6 +25,7 @@ export const menuItems: MenuItem[] = [
     items: [
       { text: 'Data', routePath: 'docs/row-data' },
       { text: 'Templates', routePath: 'docs/row-templates' },
+      { text: 'Sticky', routePath: 'docs/row-sticky' },
     ],
   },
   { text: 'Cells', items: [{ text: 'Cell Content' }] },
