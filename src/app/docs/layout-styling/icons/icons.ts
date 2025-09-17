@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CodeBlockComponent } from '../../../components/code-block/code-block';
+import { ICONS } from './icons-data';
 
 @Component({
   selector: 'docs-layout-styling-icons',
@@ -8,6 +9,8 @@ import { CodeBlockComponent } from '../../../components/code-block/code-block';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconsComponent {
+  icons = ICONS;
+
   registerFontClass = `
     
         this.iconService.registerFontClass('sort-asc', 'fi fi-rs-marker');

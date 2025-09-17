@@ -6,8 +6,33 @@
 </p>
 <code-block [code]="registerFontClass" language="typescript" [showLineNumbers]="true"></code-block>
 <p>
+  The first parameter is the internal identifier of the icon and the second is the font class name.
+</p>
+<p>
   This assumes of course, that you provided the needed css for your font icons in one of the known
   ways. In this example an icon from
   <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">Flaticon</a> was
   used.
 </p>
+<h2>Internal icon identifiers</h2>
+<p>Currently the following internal identifiers exist:</p>
+<table class="doc-table">
+  <thead>
+    <tr>
+      <th>Internal identifier</th>
+      <th>Used For</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (icon of icons; track icon.ident) {
+    <tr>
+      <td>
+        {{ icon.ident }}
+      </td>
+      <td>
+        {{ icon.usedFor }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
