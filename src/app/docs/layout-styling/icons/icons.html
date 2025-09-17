@@ -1,0 +1,11 @@
+<h1>Icons</h1>
+<p>
+  As per default the grid uses build-in <b>svg</b> icons. But if you want to use f. e. font class
+  icons, you have to inject the <b><code>DGridIconService</code></b> service in your app and call
+  the <b><code>registerFontClass</code></b> method like this:
+</p>
+<code-block [code]="registerFontClass" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  This assumes of course, that you provided the needed css for your font icons in one of the known
+  ways.
+</p>

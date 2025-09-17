@@ -10,6 +10,7 @@ export const menuItems: MenuItem[] = [
   { text: 'CSS Variables', routePath: 'docs/css-variables' },
   { text: 'Design System' },
   { text: 'Grid Layout', routePath: 'docs/grid-layout' },
+  { text: 'Icons', routePath: 'docs/icons' },
   { text: 'Core Features', isTitle: true },
   {
     text: 'Columns',
