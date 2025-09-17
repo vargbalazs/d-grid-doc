@@ -1,31 +1,31 @@
-table {
+table.doc-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-thead {
+.doc-table thead {
   background-color: var(--teal-mid-alpha);
   color: var(--teal-dark);
 }
 
-thead th {
+.doc-table thead th {
   text-align: left;
   padding: 8px;
   border-bottom: 2px solid var(--teal-mid);
 }
 
-tbody tr {
+.doc-table tbody tr {
   border-bottom: 1px solid var(--teal-mid-alpha);
 }
 
-tbody td {
+.doc-table tbody td {
   padding: 8px;
 }
 
-tbody tr td:first-child {
+.doc-table tbody tr td:first-child {
   color: var(--grey-title);
 }
 
-tbody tr td:last-child {
+.doc-table tbody tr td:last-child {
   color: var(--grey-text);
 }
