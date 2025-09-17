@@ -1,0 +1,18 @@
+<h1>Column visibility</h1>
+<p>
+  In order to toggle the visibility of a column, set it's <b><code>hidden</code></b> property
+  accordingly, depending how the columns were defined (with the <b><code>columns</code></b> input
+  property or with <b><code>d-grid-column</code></b> elements).
+</p>
+<p>
+  If the columns were defined with the <b><code>columns</code></b> input property , then you have to
+  set the <b><code>hidden</code></b> property like this (since the <b><code>columns</code></b> input
+  property must be a signal and you have to update the reference of the array):
+</p>
+<code-block [code]="toggleVisSignal" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  If you used <b><code>d-grid-column</code></b> elements to define the columns, then in this case
+  you have to only set/toggle the <b><code>hidden</code></b> property of the given column, f. e.:
+</p>
+<code-block [code]="toggleVisWithElement" language="html" [showLineNumbers]="true"></code-block>
+<p>Of course this is a more convenient way of doing this.</p>
