@@ -6,7 +6,6 @@ import { INTERNAL_VARIABLES } from './variables-data';
   selector: 'docs-layout-styling-variables',
   imports: [RouterLink],
   templateUrl: './variables.html',
-  styleUrl: './variables.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CssVariablesComponent {

@@ -4,6 +4,7 @@
 @import './treeview.css';
 @import './text.css';
 @import './highlight.css';
+@import './table.css';
 
 div[style^='display: flex'],
 div[kendowatermarkoverlay] {
