@@ -19,6 +19,7 @@ export const menuItems: MenuItem[] = [
       { text: 'Sizing', routePath: 'docs/column-sizing' },
       { text: 'Templates', routePath: 'docs/column-templates' },
       { text: 'Visibility', routePath: 'docs/column-visibility' },
+      { text: 'Sorting', routePath: 'docs/column-sorting' },
     ],
   },
   {

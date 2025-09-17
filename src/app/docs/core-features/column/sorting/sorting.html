@@ -1,0 +1,88 @@
+<h1>Column sorting</h1>
+<h2>Grid settings</h2>
+<p>
+  We can define the sorting behaviour of the grid on column level, however, there is a global
+  <b><code>DGridSortSettings</code></b> interface, which we can assign to the
+  <b><code>sortSettings</code></b> input property of the grid.
+</p>
+<p>
+  Currently we can set the <b><code>sortMode</code></b> of the grid, which is of type
+  <b><code>DGridSortMode</code></b
+  >, holding two values: <b><code>single</code></b> and <b><code>multiple</code></b
+  >:
+</p>
+<code-block [code]="sortModeInt" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  As per default the grid is in <b><code>single</code></b> sort mode (in this case you don't have to
+  set the <b><code>sortSettings</code></b> input property), which means, the grid will be sorted
+  only based on one column.
+</p>
+<p>
+  If you want to sort the grid f. e. based on multiple columns, then set the
+  <b><code>sortSettings</code></b> input property accordingly:
+</p>
+<code-block [code]="sortSettings" language="html" [showLineNumbers]="true"></code-block>
+<p>
+  You can also do multiple sorting, if the grid isn't configured like that. In this case, just
+  simply press and hold the <b><code>Ctrl</code></b> key and click on the columns to be sorted.
+</p>
+<h2>Column settings</h2>
+<p>
+  In order to set a column sortable, set the <b><code>sortable</code></b> property of the given
+  column accordingly.
+</p>
+<p>
+  The <b><code>sortable</code></b> property can be a simple <b><code>boolean</code></b> value or a
+  <b><code>DGridColumnSortSettings</code></b> object. Defining the sorting with a
+  <b><code>DGridColumnSortSettings</code></b> you have many options for sorting a column:
+</p>
+<code-block [code]="colSettings" language="typescript" [showLineNumbers]="true"></code-block>
+<h3>Available options</h3>
+<b><code>compareFn</code></b>
+<p>
+  As per default the column is sorted ascending or descending based on it's data type. The grid
+  infers it automatically and applies the appr. built-in compare function. If for some reason you
+  want to apply other sort logic, you can define a custom compare function, f. e. like this (here
+  <b><code>Row</code></b> is your custom interface holding the row data):
+</p>
+<code-block [code]="customCompare" language="typescript" [showLineNumbers]="true"></code-block>
+<p>And then use it in the grid like this:</p>
+<code-block
+  [code]="customCompareTemplate"
+  language="typescript"
+  [showLineNumbers]="true"
+></code-block>
+<b><code>sortValueFn</code></b>
+<p>
+  As mentioned above, the grid infers the data type automatically. But it can be, that for the given
+  column a cell template was defined with the <b><code>dGridCellTemplate</code></b> directive. In
+  this case the column is sorted still based on the inferred data type. But if you made some
+  transformations to the underlying data in the template, then it could happen, that sorting gives a
+  wrong result. To avoid this you can define a function, which computes the value based on the row
+  data, f. e.:
+</p>
+<code-block [code]="sortValueFn" language="typescript" [showLineNumbers]="true"></code-block>
+<p>You can use it like this:</p>
+<code-block [code]="sortValueTemplate" language="html" [showLineNumbers]="true"></code-block>
+<b><code>initialDir</code></b>
+<p>
+  With this option you can define an initial direction (<b><code>'asc'</code></b> or
+  <b><code>'desc'</code></b
+  >). After loading the grid data, the grid will be sorted accordingly. F. e.:
+</p>
+<code-block [code]="initialSort" language="html" [showLineNumbers]="true"></code-block>
+<p>
+  If the grid sort mode is set to <b><code>single</code></b> and there is more, than one column with
+  an initial sort setting, then a console message appears and only the first column with an initial
+  sort setting will be respected:
+</p>
+<img src="assets/images/column-sorting-warning.png" alt="column-sorting-warning" />
+<div style="padding-top: 30px">
+  <b><code>sortPriority</code></b>
+</div>
+<p>
+  Similar to the <b><code>initialDir</code></b> property you can also define a sort priority for the
+  given column. Of course this makes sense only in <b><code>multiple</code></b> sort mode. And in
+  order to get this work, you have to define also the <b><code>initialDir</code></b> value, f. e.:
+</p>
+<code-block [code]="sortPrior" language="html" [showLineNumbers]="true"></code-block>

@@ -3,6 +3,7 @@ import { ColumnConfigComponent } from '../column/configuration/configuration';
 import { ColumnSizingComponent } from '../column/sizing/sizing';
 import { ColumnTemplatesComponent } from '../column/templates/templates';
 import { ColumnVisibilityComponent } from './visibility/visibility';
+import { ColumnSortingComponent } from './sorting/sorting';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,9 @@ export const routes: Routes = [
   {
     path: 'column-visibility',
     component: ColumnVisibilityComponent,
+  },
+  {
+    path: 'column-sorting',
+    component: ColumnSortingComponent,
   },
 ];
