@@ -3,12 +3,13 @@
   As stated in the <a routerLink="/docs/introduction">Introduction</a> section, the grid is composed
   of a <b>header</b>, a <b>body</b> and a <b>footer</b>.
 </p>
+<h2>Sticky header and/or footer</h2>
 <p>
   As per default, the header is sticked to the top. But you will experience this only, if the height
   of the grid is explicitly set. For your convenience this will be logged also in the console window
   of the dev tools:
 </p>
-<img src="assets/images/sticky-header-warning.png" alt="Logo" />
+<img src="assets/images/sticky-header-warning.png" alt="sticky-header-warning" />
 <p>
   If you want to change that, you can assign to the <b><code>sticky</code></b> input property of the
   grid a <b><code>DGridSticky</code></b> object. The definition looks like this:
@@ -18,3 +19,16 @@
   As you see, the header is sticky by default. And you don't have to specify both, if you want to
   change only one of them.
 </p>
+<h2>Error template</h2>
+<p>
+  If for some reason the settings made by the user don't make it possible to render the grid, an
+  error template will be shown. Also a meaningful console message appears in the dev tools, f. e.:
+</p>
+<img src="assets/images/column-def-error.png" alt="column-def-error" />
+<p>Actually this is the case when:</p>
+<ul>
+  <li>
+    We define the columns with the <b><code>columns</code></b> input property, but also with the
+    <b><code>d-grid-column</code></b> elements.
+  </li>
+</ul>
