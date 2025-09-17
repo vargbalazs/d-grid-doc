@@ -28,6 +28,7 @@ export const menuItems: MenuItem[] = [
       { text: 'Data', routePath: 'docs/row-data' },
       { text: 'Templates', routePath: 'docs/row-templates' },
       { text: 'Sticky', routePath: 'docs/row-sticky' },
+      { text: 'Animated', routePath: 'docs/row-animated' },
     ],
   },
   { text: 'Cells', items: [{ text: 'Cell Content' }] },
