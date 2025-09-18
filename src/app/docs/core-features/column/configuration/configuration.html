@@ -53,3 +53,12 @@
   <b><code>&#64;for</code></b> block. For this you will need of course an appr. column array:
 </p>
 <code-block [code]="for" language="html" [showLineNumbers]="true"></code-block>
+<h2>
+  Wrong <b><code>field</code></b> name
+</h2>
+<p>
+  If we configure one or more columns with a <b><code>field</code></b> name, which doesn't exist in
+  the underlying data source, then the corresponding column will be shown with empty cells and we
+  will get a console warn in the dev tools:
+</p>
+<img src="assets/images/column-wrong-field.png" alt="column-wrong-field" />
