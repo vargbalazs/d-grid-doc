@@ -69,4 +69,12 @@ export class RowDataComponent {
       initialValue: [],
     });
   `;
+
+  rowInt = `
+    export interface DGridRow {
+      internalId: string;
+      originalIndex: number;
+      data: any;
+    }
+  `;
 }
