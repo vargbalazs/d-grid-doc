@@ -3,7 +3,7 @@ import { MenuItem } from '../interfaces/menu-item';
 export const menuItems: MenuItem[] = [
   { text: 'Getting started', isTitle: true },
   { text: 'Introduction', routePath: 'docs/introduction' },
-  { text: 'Quick Start' },
+  { text: 'Quick Start', routePath: 'docs/quick-start' },
   { text: 'Key Features' },
   { text: 'Changelog', routePath: 'docs/changelog' },
   { text: 'Layout & Styling', isTitle: true },

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { IntroductionComponent } from './introduction/introduction';
 import { ChangelogComponent } from './changelog/changelog';
+import { QuickStartComponent } from './quick-start/quick-start';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
   {
     path: 'changelog',
     component: ChangelogComponent,
+  },
+  {
+    path: 'quick-start',
+    component: QuickStartComponent,
   },
   {
     path: '',
