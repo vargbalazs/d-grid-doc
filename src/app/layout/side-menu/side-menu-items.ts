@@ -5,6 +5,7 @@ export const menuItems: MenuItem[] = [
   { text: 'Introduction', routePath: 'docs/introduction' },
   { text: 'Quick Start' },
   { text: 'Key Features' },
+  { text: 'Changelog', routePath: 'docs/changelog' },
   { text: 'Layout & Styling', isTitle: true },
   { text: 'Theming', routePath: 'docs/theming' },
   { text: 'CSS Variables', routePath: 'docs/css-variables' },

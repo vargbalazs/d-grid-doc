@@ -1,10 +1,15 @@
 import { Routes } from '@angular/router';
 import { IntroductionComponent } from './introduction/introduction';
+import { ChangelogComponent } from './changelog/changelog';
 
 export const routes: Routes = [
   {
     path: 'introduction',
     component: IntroductionComponent,
+  },
+  {
+    path: 'changelog',
+    component: ChangelogComponent,
   },
   {
     path: '',
