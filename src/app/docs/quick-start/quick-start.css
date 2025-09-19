@@ -1,7 +1,8 @@
 .npm {
-  background-color: gainsboro;
+  background-color: var(--teal-mid-alpha);
   color: var(--teal-mid);
   font-weight: 500;
   padding: 5px;
   border-radius: 8px;
+  font-weight: bold;
 }
