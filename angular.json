@@ -26,7 +26,8 @@
               {
                 "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
               },
-              "src/app/styles/main.css"
+              "src/app/styles/main.css",
+              "node_modules/d-grid-angular/src/lib/styles/d-grid.css"
             ],
             "polyfills": ["@angular/localize/init"]
           },
