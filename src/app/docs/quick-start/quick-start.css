@@ -7,10 +7,6 @@
   font-weight: bold;
 }
 
-kendo-tabstrip:not(.code) {
+:host::ng-deep kendo-tabstrip:not(.code) {
   height: 380px;
-}
-
-kendo-tabstrip.code {
-  height: 100%;
 }

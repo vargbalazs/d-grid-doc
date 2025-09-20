@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CodeBlockComponent } from '../../components/code-block/code-block';
 import { QuickStartExampleComponent } from './example/example';
 import { KENDO_TABSTRIP } from '@progress/kendo-angular-layout';
 import { CodeFile } from '../../interfaces/code-file';
 import { CommonModule } from '@angular/common';
+import { LiveExampleComponent } from '../../components/example/live-example';
 
 @Component({
   selector: 'docs-quick-start',
-  imports: [CodeBlockComponent, QuickStartExampleComponent, KENDO_TABSTRIP, CommonModule],
+  imports: [QuickStartExampleComponent, KENDO_TABSTRIP, CommonModule, LiveExampleComponent],
   templateUrl: './quick-start.html',
   styleUrl: './quick-start.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -15,27 +15,7 @@
   that define some data, define the grid and configure the columns. For further reference see the
   example.
 </p>
-<kendo-tabstrip>
-  <kendo-tabstrip-tab title="Example" [selected]="true">
-    <ng-template kendoTabContent>
-      <docs-quick-start-example></docs-quick-start-example>
-    </ng-template>
-  </kendo-tabstrip-tab>
-  <kendo-tabstrip-tab title="Code">
-    <ng-template kendoTabContent>
-      <kendo-tabstrip tabPosition="left" class="code">
-        @for (codeFile of codeFiles; track codeFile.fileName) {
-        <kendo-tabstrip-tab [title]="codeFile.fileName" [selected]="!!codeFile.selected">
-          <ng-template kendoTabContent>
-            <code-block
-              [code]="codeFile.code"
-              [language]="codeFile.lang"
-              [showLineNumbers]="codeFile.showLineNumbers"
-            ></code-block>
-          </ng-template>
-        </kendo-tabstrip-tab>
-        }
-      </kendo-tabstrip>
-    </ng-template>
-  </kendo-tabstrip-tab>
-</kendo-tabstrip>
+<live-example [exampleTemplate]="quickStartTemplate" [codeFiles]="codeFiles"></live-example>
+<ng-template #quickStartTemplate>
+  <docs-quick-start-example></docs-quick-start-example>
+</ng-template>
