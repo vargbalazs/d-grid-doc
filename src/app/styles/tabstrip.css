@@ -1,0 +1,26 @@
+kendo-tabstrip.code pre {
+  margin: 0;
+}
+
+kendo-tabstrip.code code {
+  padding: 0;
+  margin-top: -30px;
+}
+
+kendo-tabstrip.code .k-tabstrip-content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.k-tabstrip-items-wrapper .k-item:focus,
+.k-tabstrip-items-wrapper .k-item.k-focus,
+.k-tabstrip-items-wrapper .k-item.k-active {
+  box-shadow: none;
+  background-color: var(--teal-mid-alpha);
+  color: var(--teal-mid);
+  font-weight: bold;
+}
+
+.k-tabstrip-item:not(.k-active) .k-link-text {
+  color: var(--grey-text);
+}

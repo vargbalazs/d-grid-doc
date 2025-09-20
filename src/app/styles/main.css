@@ -5,6 +5,7 @@
 @import './text.css';
 @import './highlight.css';
 @import './table.css';
+@import './tabstrip.css';
 
 div[style^='display: flex'],
 div[kendowatermarkoverlay] {

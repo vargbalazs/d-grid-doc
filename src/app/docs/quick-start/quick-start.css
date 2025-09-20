@@ -6,3 +6,11 @@
   border-radius: 8px;
   font-weight: bold;
 }
+
+kendo-tabstrip:not(.code) {
+  height: 380px;
+}
+
+kendo-tabstrip.code {
+  height: 100%;
+}
