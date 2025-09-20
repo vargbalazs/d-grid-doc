@@ -13,4 +13,5 @@ import { CodeBlockComponent } from '../code-block/code-block';
 export class LiveExampleComponent {
   @Input() exampleTemplate!: TemplateRef<any>;
   @Input() codeFiles: CodeFile[] = [];
+  @Input() height: number = 380;
 }
