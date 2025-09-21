@@ -40,6 +40,10 @@
     >: defines whether the column should be not visible
   </li>
 </ul>
+<live-example [exampleTemplate]="columnsWithInput" [codeFiles]="codeFilesWithInput"></live-example>
+<ng-template #columnsWithInput>
+  <docs-core-features-column-config-with-input></docs-core-features-column-config-with-input>
+</ng-template>
 <h3>
   Define columns with <b><code>d-grid-column</code></b> elements
 </h3>
@@ -53,6 +57,13 @@
   <b><code>&#64;for</code></b> block. For this you will need of course an appr. column array:
 </p>
 <code-block [code]="for" language="html" [showLineNumbers]="true"></code-block>
+<live-example
+  [exampleTemplate]="columnsWithElement"
+  [codeFiles]="codeFilesWithElements"
+></live-example>
+<ng-template #columnsWithElement>
+  <docs-core-features-column-config-with-elements></docs-core-features-column-config-with-elements>
+</ng-template>
 <h2>
   Wrong <b><code>field</code></b> name
 </h2>
