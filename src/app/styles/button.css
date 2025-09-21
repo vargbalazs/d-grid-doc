@@ -1,0 +1,11 @@
+button {
+  background-color: white;
+  color: var(--teal-mid);
+  border: 2px solid var(--teal-light);
+  padding: 5px;
+}
+
+button:hover {
+  background-color: var(--teal-mid-alpha);
+  cursor: pointer;
+}

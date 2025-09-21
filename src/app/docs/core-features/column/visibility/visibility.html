@@ -10,9 +10,23 @@
   property must be a signal and you have to update the reference of the array):
 </p>
 <code-block [code]="toggleVisSignal" language="typescript" [showLineNumbers]="true"></code-block>
+<live-example
+  [exampleTemplate]="columnVisWithInput"
+  [codeFiles]="codeFilesWithInput"
+></live-example>
+<ng-template #columnVisWithInput>
+  <docs-core-features-column-visibility-example></docs-core-features-column-visibility-example>
+</ng-template>
 <p>
   If you used <b><code>d-grid-column</code></b> elements to define the columns, then in this case
   you have to only set/toggle the <b><code>hidden</code></b> property of the given column, f. e.:
 </p>
 <code-block [code]="toggleVisWithElement" language="html" [showLineNumbers]="true"></code-block>
 <p>Of course this is a more convenient way of doing this.</p>
+<live-example
+  [exampleTemplate]="columnVisWithElements"
+  [codeFiles]="codeFilesWithElements"
+></live-example>
+<ng-template #columnVisWithElements>
+  <docs-core-features-column-visibility-example2></docs-core-features-column-visibility-example2>
+</ng-template>
