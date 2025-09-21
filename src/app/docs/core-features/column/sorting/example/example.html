@@ -1,0 +1,20 @@
+<d-grid [style.height.%]="99" [data]="gridData()" [sortSettings]="{ sortMode: 'multiple' }">
+  <d-grid-column field="id" header="id" [width]="50" [sortable]="{ sortValueFn: getId }">
+    <ng-template dGridCellTemplate let-data>
+      <div>{{ transformCellValue(data.id) }}</div>
+    </ng-template>
+  </d-grid-column>
+  <d-grid-column
+    field="name"
+    header="name"
+    [width]="100"
+    [sortable]="{ initialDir: 'desc', sortPriority: 2 }"
+  ></d-grid-column>
+  <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
+  <d-grid-column
+    field="active"
+    header="active"
+    [width]="100"
+    [sortable]="{ initialDir: 'asc', sortPriority: 1 }"
+  ></d-grid-column>
+</d-grid>
