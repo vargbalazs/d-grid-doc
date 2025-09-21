@@ -63,6 +63,10 @@
   to the <b><code>loading</code></b> input property of the grid.
 </p>
 <code-block [code]="asyncAssignV2" language="typescript" [showLineNumbers]="true"></code-block>
+<live-example [exampleTemplate]="asyncData" [codeFiles]="codeFilesAsync"></live-example>
+<ng-template #asyncData>
+  <docs-core-features-rows-data-async-example></docs-core-features-rows-data-async-example>
+</ng-template>
 <h3>Convert an observable to a signal</h3>
 <p>
   You can also specify the data source converting an observable to a signal like this and assign it
@@ -70,15 +74,22 @@
 </p>
 <code-block [code]="convertToSignal" language="typescript" [showLineNumbers]="true"></code-block>
 <p>
-  You don't have to use <b><code>async</code></b> pipe on it, since converting to a signal ensures,
-  that the subscription will be cleaned up. In this case you don't have to use the
-  <b><code>loading</code></b> input property.
+  You can't (and don't have to) use <b><code>async</code></b> pipe on it (since it is a signal) and
+  converting to a signal ensures, that the subscription will be cleaned up. In this case you don't
+  have to use the <b><code>loading</code></b> input property.
 </p>
 <p>
   Reassigning a new data source to the grid in this way can be also done, but you will have to use
   <b><code>runInInjectionContext</code></b
   >.
 </p>
+<live-example
+  [exampleTemplate]="asyncDataConvert"
+  [codeFiles]="codeFilesAsyncConvert"
+></live-example>
+<ng-template #asyncDataConvert>
+  <docs-core-features-rows-data-async-convert-example></docs-core-features-rows-data-async-convert-example>
+</ng-template>
 <h2>Row interface</h2>
 <p>
   The grid exposes the <b><code>DGridRow</code></b> interface with the following properties:
