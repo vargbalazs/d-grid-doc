@@ -1,0 +1,18 @@
+<d-grid [style.height.%]="99" [data]="gridData()">
+  <d-grid-column field="id" header="id" [width]="50" [sortable]="true">
+    <ng-template dGridCellTemplate let-data let-column="column">
+      <div>{{ column.field }}: {{ data.id }}</div>
+    </ng-template>
+  </d-grid-column>
+  <d-grid-column field="name" header="name" [width]="100" [sortable]="true">
+    <ng-template dGridHeaderTemplate let-column>
+      <div style="color: red">{{ column.header }}</div>
+    </ng-template>
+  </d-grid-column>
+  <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
+  <d-grid-column field="active" header="active" [width]="100" [sortable]="true">
+    <ng-template dGridFooterTemplate let-column>
+      <div>Footer: {{ column.header }}</div>
+    </ng-template>
+  </d-grid-column>
+</d-grid>
