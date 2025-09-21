@@ -20,14 +20,14 @@ import { sampleData2 } from './data-2';
 })
 export class RowDataAsyncConvertExampleComponent {
   private injector = inject(EnvironmentInjector);
-  gridDataHttp = of(sampleData).pipe(delay(3000));
+  gridDataHttp = of(sampleData).pipe(delay(1000));
   gridDataSignal = toSignal<Row[], Row[]>(this.gridDataHttp, {
     initialValue: [],
   });
 
   changeData() {
     const newData = [...sampleData2];
-    const newObservable = of(newData).pipe(delay(3000));
+    const newObservable = of(newData).pipe(delay(1000));
     runInInjectionContext(this.injector, () => {
       this.gridDataSignal = toSignal(newObservable, {
         initialValue: [],

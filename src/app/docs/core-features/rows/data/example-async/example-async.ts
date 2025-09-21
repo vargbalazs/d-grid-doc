@@ -13,8 +13,8 @@ import { delay, of } from 'rxjs';
 })
 export class RowDataAsyncExampleComponent implements OnInit {
   gridData = signal<Row[]>([]);
-  gridDataHttp = of(sampleData).pipe(delay(3000));
-  gridDataHttp2 = of(sampleData2).pipe(delay(3000));
+  gridDataHttp = of(sampleData).pipe(delay(1000));
+  gridDataHttp2 = of(sampleData2).pipe(delay(1000));
   loading = false;
 
   ngOnInit(): void {

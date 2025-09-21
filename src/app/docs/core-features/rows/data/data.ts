@@ -50,7 +50,7 @@ export class RowDataComponent {
   `;
 
   subscribe = `
-    gridDataHttp = of(sampleData).pipe(delay(3000));
+    gridDataHttp = of(sampleData).pipe(delay(1000));
 
     ngOnInit(): void {
       this.gridDataHttp.subscribe((data) => {
@@ -226,8 +226,8 @@ export class RowDataComponent {
         })
         export class RowDataAsyncExampleComponent implements OnInit {
           gridData = signal<Row[]>([]);
-          gridDataHttp = of(sampleData).pipe(delay(3000));
-          gridDataHttp2 = of(sampleData2).pipe(delay(3000));
+          gridDataHttp = of(sampleData).pipe(delay(1000));
+          gridDataHttp2 = of(sampleData2).pipe(delay(1000));
           loading = false;
 
           ngOnInit(): void {
@@ -373,14 +373,14 @@ export class RowDataComponent {
         })
         export class RowDataAsyncConvertExampleComponent {
           private injector = inject(EnvironmentInjector);
-          gridDataHttp = of(sampleData).pipe(delay(3000));
+          gridDataHttp = of(sampleData).pipe(delay(1000));
           gridDataSignal = toSignal<Row[], Row[]>(this.gridDataHttp, {
             initialValue: [],
           });
 
           changeData() {
             const newData = [...sampleData2];
-            const newObservable = of(newData).pipe(delay(3000));
+            const newObservable = of(newData).pipe(delay(1000));
             runInInjectionContext(this.injector, () => {
               this.gridDataSignal = toSignal(newObservable, {
                 initialValue: [],
