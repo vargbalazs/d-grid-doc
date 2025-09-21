@@ -187,7 +187,7 @@ export class ColumnConfigComponent {
     {
       fileName: 'example.html',
       code: `
-        <d-grid [data]="gridData()">
+        <d-grid [style.height.%]="99" [data]="gridData()">
           <d-grid-column field="id" header="id" [width]="50" [sortable]="true"></d-grid-column>
           <d-grid-column field="name" header="name" [width]="100" [sortable]="true"></d-grid-column>
           <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
