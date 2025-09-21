@@ -14,7 +14,6 @@ export class RowTemplatesComponent {
   loadingTempl = `
     <d-grid [data]="gridData()" [asyncData]="true">
       <d-grid-column field="id" header="id" [width]="50"> </d-grid-column>
-      <d-grid-column field="id" header="id2" [width]="50"></d-grid-column>
       <d-grid-column field="name" header="name" [width]="100"></d-grid-column>
       <d-grid-column field="email" header="email" [width]="150"> </d-grid-column>
       <d-grid-column field="active" header="active" [width]="100"> </d-grid-column>
@@ -27,7 +26,6 @@ export class RowTemplatesComponent {
   noDataTempl = `
     <d-grid [data]="gridData()" [asyncData]="true">
       <d-grid-column field="id" header="id" [width]="50"> </d-grid-column>
-      <d-grid-column field="id" header="id2" [width]="50"></d-grid-column>
       <d-grid-column field="name" header="name" [width]="100"></d-grid-column>
       <d-grid-column field="email" header="email" [width]="150"> </d-grid-column>
       <d-grid-column field="active" header="active" [width]="100"> </d-grid-column>
@@ -56,8 +54,6 @@ export class RowTemplatesComponent {
         export class RowTemplatesExampleComponent implements OnInit {
           gridData = signal<Row[]>([]);
           gridDataHttp = of(sampleData).pipe(delay(1000));
-          showDefaultLoadTemplate = signal<boolean>(false);
-          showDefaultNoDataTemplate = false;
 
           ngOnInit(): void {
             this.gridDataHttp.subscribe((data) => {
@@ -84,7 +80,6 @@ export class RowTemplatesComponent {
         <button style="margin: 5px" (click)="emptyData()">Empty data</button>
         <d-grid [style.height.%]="87" [data]="gridData()" [asyncData]="true">
           <d-grid-column field="id" header="id" [width]="50"> </d-grid-column>
-          <d-grid-column field="id" header="id2" [width]="50"></d-grid-column>
           <d-grid-column field="name" header="name" [width]="100"></d-grid-column>
           <d-grid-column field="email" header="email" [width]="150"> </d-grid-column>
           <d-grid-column field="active" header="active" [width]="100"> </d-grid-column>
