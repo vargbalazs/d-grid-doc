@@ -38,3 +38,58 @@
     will be respected.
   </li>
 </ul>
+<h2>Column resizing</h2>
+<p>
+  By default, the column-resizing feature is disabled. To enable column resizing, set the
+  <b><code>resizable</code></b> property to <b><code>true</code></b
+  >. If the user resizes the Grid columns so that the total width of the columns becomes less than
+  the width of the Grid, the remaining table is filled with whitespace.
+</p>
+<p>
+  To restrict the resizing of the column within a certain range, set its
+  <b><code>minResizableWidth</code></b> and <b><code>maxResizableWidth</code></b> properties. If the
+  initial width of the given column is greater, than the maximum allowed width, you will notice a
+  little jump when starting resizing, because the column width will be set to the maximum allowed
+  width.
+</p>
+<p>
+  <b class="important">Important</b>: <b><code>minResizableWidth</code></b> should be set to at
+  least the sum of the largest horizontal padding (left+right) in any of the grid templates plus the
+  minimum content width of the given cell, which should be visible plus the border (usually 1px) -
+  this ensures, that columns don't overlap if we resize to the very minimum.
+</p>
+<p>
+  Upon double click on the resize element, the column width is aligned to the largest content. In
+  this case <b><code>minResizableWidth</code></b> and/or
+  <b><code>maxResizableWidth</code></b> aren't respected.
+</p>
+<live-example [exampleTemplate]="resizableColumns" [codeFiles]="codeFiles"></live-example>
+<ng-template #resizableColumns>
+  <docs-core-features-column-sizing-resize-example></docs-core-features-column-sizing-resize-example>
+</ng-template>
+<h2>Constrained mode</h2>
+<p>
+  By default, when the resizable functionality of the grid is enabled, column widths adjust relative
+  to the entire component. If the total columns width exceeds the grid's width, a horizontal
+  scrollbar appears. If the total columns width is less than the grid's width, the remaining space
+  is displayed as white space.
+</p>
+<p>
+  To prevent this behavior and ensure that adjacent columns resize only up to their outer borders,
+  set the <b><code>resizable</code></b> property to a variable of type
+  <b><code>DGridResizeMode</code></b> with a value equal to <b><code>constrained</code></b
+  >. To retain the default behavior, set the <b><code>resizable</code></b> property to
+  <b><code>unconstrained</code></b> or to <b><code>true</code></b
+  >.
+</p>
+<p>
+  In constrained mode we have to stop resizing the second last column, if the last column reaches a
+  certain width. This width is set currently to <b><code>40</code></b> pixels.
+</p>
+<live-example
+  [exampleTemplate]="resizableConstrainedColumns"
+  [codeFiles]="codeFilesConstrained"
+></live-example>
+<ng-template #resizableConstrainedColumns>
+  <docs-core-features-column-sizing-resize-constrained-example></docs-core-features-column-sizing-resize-constrained-example>
+</ng-template>

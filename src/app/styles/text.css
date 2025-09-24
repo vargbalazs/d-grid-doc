@@ -22,7 +22,7 @@ b {
 
 .required {
   text-transform: uppercase;
-  color: crimson;
+  color: var(--important);
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -30,4 +30,10 @@ b {
 a {
   color: var(--teal-mid);
   font-weight: bold;
+}
+
+.important {
+  color: var(--important);
+  font-weight: bold;
+  background-color: var(--important-background);
 }
