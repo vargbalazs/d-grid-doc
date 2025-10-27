@@ -1,0 +1,78 @@
+<h1>Filter menu</h1>
+<p>
+  If we set the <b><code>filterable</code></b> property to <b><code>true</code></b> or
+  <b><code>row</code></b
+  >, a filter row is showing below the header. For each data type a default editor will be rendered:
+</p>
+<ul>
+  <li>
+    <b><code>number</code></b
+    >: text editor with only numbers, minus sign and comma or dot (depending on the locale)
+  </li>
+  <li>
+    <b><code>string</code></b
+    >: text editor
+  </li>
+  <li>
+    <b><code>boolean</code></b
+    >: dropdown
+  </li>
+  <li>
+    <b><code>date</code></b
+    >: default date editor
+  </li>
+</ul>
+<p>
+  Clicking on the icon left to the rendered editor we can choose a filter operator. Depending on the
+  data type, there are different filter operators available.
+</p>
+<h2>Filter operators</h2>
+<p>
+  For each data type there is a set of filter operators, which can be used to filter the grid data.
+</p>
+<h3>Number filter operators</h3>
+<ul>
+  <li>Is equal to</li>
+  <li>Is not equal to</li>
+  <li>Is greater than or equal to</li>
+  <li>Is greater than</li>
+  <li>Is less than or equal to</li>
+  <li>Is less than</li>
+  <li>Is null</li>
+  <li>Is not null</li>
+</ul>
+<h3>String filter operators</h3>
+<ul>
+  <li>Is equal to</li>
+  <li>Is not equal to</li>
+  <li>Contains</li>
+  <li>Does not contain</li>
+  <li>Starts with</li>
+  <li>Ends with</li>
+  <li>Is null</li>
+  <li>Is not null</li>
+  <li>Is empty</li>
+  <li>Is not empty</li>
+</ul>
+<h3>Date filter operators</h3>
+<ul>
+  <li>Is equal to</li>
+  <li>Is not equal to</li>
+  <li>Is after or equal to</li>
+  <li>Is after</li>
+  <li>Is before or equal to</li>
+  <li>Is before</li>
+  <li>Is null</li>
+  <li>Is not null</li>
+</ul>
+<h3>Boolean filter operators</h3>
+<ul>
+  <li>Is True</li>
+  <li>Is False</li>
+  <li>Show All</li>
+</ul>
+<h2>Example</h2>
+<live-example [exampleTemplate]="filterMenu" [codeFiles]="codeFiles"></live-example>
+<ng-template #filterMenu>
+  <docs-core-features-filtering-filter-menu-example></docs-core-features-filtering-filter-menu-example>
+</ng-template>

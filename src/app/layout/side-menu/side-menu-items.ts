@@ -39,6 +39,7 @@ export const menuItems: MenuItem[] = [
     items: [
       { text: 'Overview', routePath: 'docs/filtering-overview' },
       { text: 'Filter row', routePath: 'docs/filtering-row' },
+      { text: 'Filter menu', routePath: 'docs/filtering-menu' },
     ],
   },
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
