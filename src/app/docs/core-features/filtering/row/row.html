@@ -22,3 +22,57 @@
     >: default date editor
   </li>
 </ul>
+<p>
+  Clicking on the icon left to the rendered editor we can choose a filter operator. Depending on the
+  data type, there are different filter operators available.
+</p>
+<h2>Filter operators</h2>
+<p>
+  For each data type there is a set of filter operators, which can be used to filter the grid data.
+</p>
+<h3>Number filter operators</h3>
+<ul>
+  <li>Is equal to</li>
+  <li>Is not equal to</li>
+  <li>Is greater than or equal to</li>
+  <li>Is greater than</li>
+  <li>Is less than or equal to</li>
+  <li>Is less than</li>
+  <li>Is null</li>
+  <li>Is not null</li>
+</ul>
+<h3>String filter operators</h3>
+<ul>
+  <li>Is equal to</li>
+  <li>Is not equal to</li>
+  <li>Contains</li>
+  <li>Does not contain</li>
+  <li>Starts with</li>
+  <li>Ends with</li>
+  <li>Is null</li>
+  <li>Is not null</li>
+  <li>Is empty</li>
+  <li>Is not empty</li>
+</ul>
+<h3>Date filter operators</h3>
+<ul>
+  <li>Is equal to</li>
+  <li>Is not equal to</li>
+  <li>Is after or equal to</li>
+  <li>Is after</li>
+  <li>Is before or equal to</li>
+  <li>Is before</li>
+  <li>Is null</li>
+  <li>Is not null</li>
+</ul>
+<h3>Boolean filter operators</h3>
+<ul>
+  <li>Is True</li>
+  <li>Is False</li>
+  <li>Show All</li>
+</ul>
+<h2>Example</h2>
+<live-example [exampleTemplate]="filterRow" [codeFiles]="codeFiles"></live-example>
+<ng-template #filterRow>
+  <docs-core-features-filtering-filter-row-example></docs-core-features-filtering-filter-row-example>
+</ng-template>
