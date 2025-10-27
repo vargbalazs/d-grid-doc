@@ -34,7 +34,13 @@ export const menuItems: MenuItem[] = [
     ],
   },
   { text: 'Cells', items: [{ text: 'Cell Content' }] },
-  { text: 'Filtering', items: [{ text: 'Overview' }] },
+  {
+    text: 'Filtering',
+    items: [
+      { text: 'Overview', routePath: 'docs/filtering-overview' },
+      { text: 'Filter row', routePath: 'docs/filtering-row' },
+    ],
+  },
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
   { text: 'Editing', items: [{ text: 'Overview' }] },
   { text: 'Advanced features', isTitle: true },

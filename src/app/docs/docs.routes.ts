@@ -28,4 +28,8 @@ export const routes: Routes = [
     path: '',
     loadChildren: () => import('./layout-styling/layout-styling.routes').then((m) => m.routes),
   },
+  {
+    path: '',
+    loadChildren: () => import('./core-features/filtering/filtering.routes').then((m) => m.routes),
+  },
 ];
