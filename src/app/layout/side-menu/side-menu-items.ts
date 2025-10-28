@@ -40,6 +40,7 @@ export const menuItems: MenuItem[] = [
       { text: 'Overview', routePath: 'docs/filtering-overview' },
       { text: 'Filter row', routePath: 'docs/filtering-row' },
       { text: 'Filter menu', routePath: 'docs/filtering-menu' },
+      { text: 'Filter like in Excel', routePath: 'docs/filtering-excel' },
     ],
   },
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
