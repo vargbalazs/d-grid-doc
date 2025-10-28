@@ -1,8 +1,8 @@
 <h1>Filter menu</h1>
 <p>
-  If we set the <b><code>filterable</code></b> property to <b><code>true</code></b> or
-  <b><code>row</code></b
-  >, a filter row is showing below the header. For each data type a default editor will be rendered:
+  If we set the <b><code>filterable</code></b> property to <b><code>menu</code></b
+  >, a filter icon appears in each column header. Clicking on this icon, we can define filters for
+  the given column. Also in this case editors are rendered according to the data type:
 </p>
 <ul>
   <li>
@@ -23,8 +23,11 @@
   </li>
 </ul>
 <p>
-  Clicking on the icon left to the rendered editor we can choose a filter operator. Depending on the
-  data type, there are different filter operators available.
+  In the showed window we can choose a filter operator. Depending on the data type, there are
+  different filter operators available. We can also combine different operators by clicking on the
+  plus button. In this case the operators are grouped in appearance order. F. e. if we set a
+  condition A with an other condition B combined with AND and set a third condition C with OR, then
+  it will be evaulated like this: (A AND B) OR C.
 </p>
 <h2>Filter operators</h2>
 <p>

@@ -9,3 +9,7 @@ button:hover {
   background-color: var(--teal-mid-alpha);
   cursor: pointer;
 }
+
+.menu-filter button {
+  all: revert;
+}
