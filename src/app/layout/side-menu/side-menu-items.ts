@@ -43,6 +43,7 @@ export const menuItems: MenuItem[] = [
       { text: 'Filter like in Excel', routePath: 'docs/filtering-excel' },
     ],
   },
+  { text: 'Paging', items: [{ text: 'Pager', routePath: 'docs/paging-pager' }] },
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
   { text: 'Editing', items: [{ text: 'Overview' }] },
   { text: 'Advanced features', isTitle: true },

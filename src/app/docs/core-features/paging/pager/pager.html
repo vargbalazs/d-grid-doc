@@ -1,0 +1,14 @@
+<h1>Pager</h1>
+<p>
+  To enable the paging feature in the grid, set the <b><code>pageable</code></b> property to
+  <b><code>true</code></b
+  >. Setting this will show a pager component below the footer of the grid. With the
+  <b><code>pageSize</code></b> property we can define, how many rows will be showed in the grid
+  (default is 10). Alternatively we can define an array of <b><code>pageSizes</code></b
+  >. This will show a dropdown in the pager and we can select the desired page size.
+</p>
+<h2>Example</h2>
+<live-example [exampleTemplate]="pager" [codeFiles]="codeFiles"></live-example>
+<ng-template #pager>
+  <docs-core-features-paging-pager-example></docs-core-features-paging-pager-example>
+</ng-template>
