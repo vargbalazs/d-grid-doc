@@ -1,0 +1,34 @@
+<h1>Grouping</h1>
+<p>
+  To enable grouping just set the <b><code>groupable</code></b> property on the grid to
+  <b><code>true</code></b> or to <b><code>DGridGroupingSettings</code></b
+  >. With this setup a grouping panel appears above the columns and we can drag & drop the column
+  headers on this panel. After dropping the columns we can also reorder them to change the grouping.
+  We can also click on them to sort the groups. If we want to remove grouping by a column, just
+  click on the 'x' icon on the column chip or drag it out of the grouping panel.
+</p>
+<p>
+  <b><code>DGridGroupingSettings</code></b> has the following properties:
+</p>
+<ul>
+  <li>
+    <b><code>showFooter</code></b
+    >: <b><code>true</code></b> or <b><code>false</code></b
+    >, indicating, whether we want a footer for the groups or not
+  </li>
+  <li>
+    <b><code>aggregates</code></b
+    >: an array of <b><code>DGridGroupAggregate</code></b> - more to read in the 'Aggregation'
+    section
+  </li>
+  <li>
+    <b><code>stickyHeader</code></b
+    >: <b><code>true</code></b> or <b><code>false</code></b
+    >, indicating, whether we want the group headers to be sticky, if we scroll the grid
+  </li>
+</ul>
+<h2>Example</h2>
+<live-example [exampleTemplate]="groupingOverview" [codeFiles]="codeFiles"></live-example>
+<ng-template #groupingOverview>
+  <docs-adv-features-grouping-overview-example></docs-adv-features-grouping-overview-example>
+</ng-template>
