@@ -36,4 +36,8 @@ export const routes: Routes = [
     path: '',
     loadChildren: () => import('./core-features/paging/paging.routes').then((m) => m.routes),
   },
+  {
+    path: '',
+    loadChildren: () => import('./adv-features/grouping/grouping.routes').then((m) => m.routes),
+  },
 ];
