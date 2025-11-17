@@ -47,6 +47,12 @@ export const menuItems: MenuItem[] = [
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
   { text: 'Editing', items: [{ text: 'Overview' }] },
   { text: 'Advanced features', isTitle: true },
-  { text: 'Row Grouping', items: [{ text: 'Overview', routePath: 'docs/grouping-overview' }] },
+  {
+    text: 'Row Grouping',
+    items: [
+      { text: 'Overview', routePath: 'docs/grouping-overview' },
+      { text: 'Templates', routePath: 'docs/grouping-templates' },
+    ],
+  },
   { text: 'Aggregation', items: [{ text: 'Overview' }] },
 ];

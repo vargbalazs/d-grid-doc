@@ -1,0 +1,45 @@
+<h1>Grouping templates</h1>
+<p>
+  The grid provides built-in group templates which help you to customize the content of the group
+  header and footer cells. The available group templates are:
+</p>
+<ul>
+  <li>
+    Group header template (<b><code>DGridGroupHeaderTemplateDirective</code></b
+    >)
+  </li>
+  <li>
+    Group header column template (<b><code>DGridGroupHeaderColumnTemplateDirective</code></b
+    >)
+  </li>
+  <li>
+    Group footer template (<b><code>DGridGroupFooterTemplateDirective</code></b
+    >)
+  </li>
+  <li>
+    Group footer column template (<b><code>DGridGroupFooterColumnTemplateDirective</code></b
+    >)
+  </li>
+</ul>
+<p>
+  All templates expose the <b><code>group</code></b
+  >, <b><code>column</code></b> and <b><code>aggregate</code></b> interfaces to help customize the
+  templates.
+</p>
+<p>
+  As per default, the header template looks like this:
+  <b><code>'group.field: group.key (group.rows.length)'</code></b
+  >. The footer templates don't have any default format.
+</p>
+<h2>Group header template</h2>
+<p>
+  The <b><code>DGridGroupHeaderTemplateDirective</code></b> is evaluated for the grouped column
+  only. The header template helps you to customize the default group value of a certain field. The
+  group header template is rendered at the beginning of the header row/in the first column. This
+  means, if for the first column there is also a column template defined, this will be overridden.
+</p>
+<h3>Example</h3>
+<live-example [exampleTemplate]="headerTemplate" [codeFiles]="codeFiles"></live-example>
+<ng-template #headerTemplate>
+  <docs-adv-features-grouping-header-template-example></docs-adv-features-grouping-header-template-example>
+</ng-template>
