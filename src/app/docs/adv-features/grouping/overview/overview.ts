@@ -14,28 +14,28 @@ export class GroupingOverviewComponent {
     {
       fileName: 'example.ts',
       code: `
-        import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
-        import { D_GRID } from 'd-grid-angular';
-        import { Row } from './row';
-        import { sampleData } from './data';
-        import { delay, of } from 'rxjs';
+          import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+          import { D_GRID } from 'd-grid-angular';
+          import { Row } from './row';
+          import { sampleData } from './data';
+          import { delay, of } from 'rxjs';
 
-        @Component({
-        selector: 'docs-adv-features-grouping-overview-example',
-        imports: [D_GRID],
-        templateUrl: './example.html',
-        changeDetection: ChangeDetectionStrategy.OnPush,
-        })
-        export class GroupingOverviewExampleComponent implements OnInit {
-        gridData = signal<Row[]>([]);
-        gridDataHttp = of(sampleData).pipe(delay(1000));
+          @Component({
+            selector: 'docs-adv-features-grouping-overview-example',
+            imports: [D_GRID],
+            templateUrl: './example.html',
+            changeDetection: ChangeDetectionStrategy.OnPush,
+          })
+          export class GroupingOverviewExampleComponent implements OnInit {
+            gridData = signal<Row[]>([]);
+            gridDataHttp = of(sampleData).pipe(delay(1000));
 
-        ngOnInit(): void {
-            this.gridDataHttp.subscribe((data) => {
-            this.gridData.set([...data]);
-            });
-        }
-        }
+            ngOnInit(): void {
+              this.gridDataHttp.subscribe((data) => {
+                this.gridData.set([...data]);
+              });
+            }
+          }      
   `,
       lang: 'typescript',
       showLineNumbers: true,
@@ -44,25 +44,17 @@ export class GroupingOverviewComponent {
     {
       fileName: 'example.html',
       code: `
-            <d-grid [style.height.%]="99" [data]="gridData()" [sortSettings]="{ sortMode: 'multiple' }">
-              <d-grid-column field="id" header="id" [width]="50" [sortable]="{ sortValueFn: getId }">
-                <ng-template dGridCellTemplate let-data>
-                  <div>{{ transformCellValue(data.id) }}</div>
-                </ng-template>
-              </d-grid-column>
-              <d-grid-column
-                field="name"
-                header="name"
-                [width]="100"
-                [sortable]="{ initialDir: 'desc', sortPriority: 2 }"
-              ></d-grid-column>
+            <d-grid
+              [style.height.%]="87"
+              [data]="gridData()"
+              [asyncData]="true"
+              [groupable]="{ showFooter: true, stickyHeader: true }"
+            >
+              <d-grid-column field="id" header="id" [width]="50" [sortable]="true"></d-grid-column>
+              <d-grid-column field="name" header="name" [width]="100" [sortable]="true"></d-grid-column>
               <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
-              <d-grid-column
-                field="active"
-                header="active"
-                [width]="100"
-                [sortable]="{ initialDir: 'asc', sortPriority: 1 }"
-              ></d-grid-column>
+              <d-grid-column field="active" header="active" [width]="100" [sortable]="true"></d-grid-column>
+              <d-grid-column field="date" header="date" [width]="100" [sortable]="true"></d-grid-column>
             </d-grid>
           `,
       lang: 'html',
@@ -76,6 +68,7 @@ export class GroupingOverviewComponent {
             name: string;
             email: string;
             active: boolean;
+            date: string;
           }
           `,
       lang: 'typescript',
@@ -87,27 +80,358 @@ export class GroupingOverviewComponent {
           import { Row } from './row';
           
           export const sampleData: Row[] = [
-            { id: 1, name: 'Alice', email: 'alice@example.com', active: true },
-            { id: 2, name: 'Bob', email: 'bob@example.com', active: false },
-            { id: 3, name: 'Charlie', email: 'charlie@example.com', active: true },
-            { id: 4, name: 'Diana', email: 'diana@example.com', active: false },
-            { id: 5, name: 'Eve', email: 'eve@example.com', active: true },
-            { id: 6, name: 'Frank', email: 'frank@example.com', active: false },
-            { id: 7, name: 'Grace', email: 'grace@example.com', active: true },
-            { id: 8, name: 'Heidi', email: 'heidi@example.com', active: false },
-            { id: 9, name: 'Ivan', email: 'ivan@example.com', active: true },
-            { id: 10, name: 'Judy', email: 'judy@example.com', active: false },
-            { id: 11, name: 'Alice', email: 'alice.z@example.com', active: false },
-            { id: 12, name: 'Bob', email: 'bob.y@example.com', active: true },
-            { id: 13, name: 'Charlie', email: 'charlie.x@example.com', active: false },
-            { id: 14, name: 'Diana', email: 'diana.w@example.com', active: true },
-            { id: 15, name: 'Eve', email: 'eve.v@example.com', active: false },
-            { id: 16, name: 'Frank', email: 'frank.u@example.com', active: true },
-            { id: 17, name: 'Grace', email: 'grace.t@example.com', active: false },
-            { id: 18, name: 'Heidi', email: 'heidi.s@example.com', active: true },
-            { id: 19, name: 'Ivan', email: 'ivan.r@example.com', active: false },
-            { id: 20, name: 'Judy', email: 'judy.q@example.com', active: true },
+            {
+              id: 1,
+              name: 'Anna',
+              email: 'anna@example.com',
+              active: true,
+              date: '2025-09-25',
+            },
+            {
+              id: 2,
+              name: 'Bence',
+              email: 'bence@example.com',
+              active: false,
+              date: '2025-06-18',
+            },
+            {
+              id: 3,
+              name: 'Csilla',
+              email: 'csilla@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 4,
+              name: 'Dániel',
+              email: 'daniel@example.com',
+              active: false,
+              date: '2025-07-19',
+            },
+            {
+              id: 5,
+              name: 'Erika',
+              email: 'erika@example.com',
+              active: true,
+              date: '2025-09-19',
+            },
+            {
+              id: 6,
+              name: 'Ferenc',
+              email: 'ferenc@example.com',
+              active: false,
+              date: '2025-12-19',
+            },
+            {
+              id: 7,
+              name: 'Gábor',
+              email: 'gabor@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 8,
+              name: 'Hanna',
+              email: 'hanna@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 9,
+              name: 'István',
+              email: 'istvan@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 10,
+              name: 'Judit',
+              email: 'judit@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 11,
+              name: 'Anna',
+              email: 'anna@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 12,
+              name: 'Bence',
+              email: 'bence@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 13,
+              name: 'Csilla',
+              email: 'csilla@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 14,
+              name: 'Dániel',
+              email: 'daniel@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 15,
+              name: 'Erika',
+              email: 'erika@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 16,
+              name: 'Ferenc',
+              email: 'ferenc@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 17,
+              name: 'Gábor',
+              email: 'gabor@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 18,
+              name: 'Hanna',
+              email: 'hanna@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 19,
+              name: 'István',
+              email: 'istvan@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 20,
+              name: 'Judit',
+              email: 'judit@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 21,
+              name: 'Katalin',
+              email: 'katalin@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 22,
+              name: 'László',
+              email: 'laszlo@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 23,
+              name: 'Mária',
+              email: 'maria@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 24,
+              name: 'Nándor',
+              email: 'nandor@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 25,
+              name: 'Orsolya',
+              email: 'orsolya@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 26,
+              name: 'Péter',
+              email: 'peter@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 27,
+              name: 'Rita',
+              email: 'rita@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 28,
+              name: 'Szilvia',
+              email: 'szilvia@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 29,
+              name: 'Tamás',
+              email: 'tamas@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 30,
+              name: 'Zoltán',
+              email: 'zoltan@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 31,
+              name: 'Katalin',
+              email: 'katalin@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 32,
+              name: 'László',
+              email: 'laszlo@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 33,
+              name: 'Mária',
+              email: 'maria@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 34,
+              name: 'Nándor',
+              email: 'nandor@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 35,
+              name: 'Orsolya',
+              email: 'orsolya@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 36,
+              name: 'Péter',
+              email: 'peter@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 37,
+              name: 'Rita',
+              email: 'rita@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 38,
+              name: 'Szilvia',
+              email: 'szilvia@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 39,
+              name: 'Tamás',
+              email: 'tamas@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 40,
+              name: 'Zoltán',
+              email: 'zoltan@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 41,
+              name: 'Anna',
+              email: 'anna@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 42,
+              name: 'Bence',
+              email: 'bence@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 43,
+              name: 'Csilla',
+              email: 'csilla@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 44,
+              name: 'Dániel',
+              email: 'daniel@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 45,
+              name: 'Erika',
+              email: 'erika@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 46,
+              name: 'Ferenc',
+              email: 'ferenc@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 47,
+              name: 'Gábor',
+              email: 'gabor@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 48,
+              name: 'Hanna',
+              email: 'hanna@example.com',
+              active: false,
+              date: '2025-06-19',
+            },
+            {
+              id: 49,
+              name: 'István',
+              email: 'istvan@example.com',
+              active: true,
+              date: '2025-06-19',
+            },
+            {
+              id: 50,
+              name: 'Judit',
+              email: 'judit@example.com',
+              active: false,
+              date: '2024-06-19',
+            },
           ];
+          
           `,
       lang: 'typescript',
       showLineNumbers: true,
