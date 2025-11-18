@@ -3,6 +3,8 @@ import { LiveExampleComponent } from '../../../../components/example/live-exampl
 import { GroupingHeaderTemplateExampleComponent } from './group-header-example/group-header-example';
 import { CodeFile } from '../../../../interfaces/code-file';
 import { GroupingHeaderColumnTemplateExampleComponent } from './group-header-column-example/group-header-column-example';
+import { GroupingFooterTemplateExampleComponent } from './group-footer-example/group-footer-example';
+import { GroupingFooterColumnTemplateExampleComponent } from './group-footer-column-example/group-footer-column-example';
 
 @Component({
   selector: 'docs-adv-features-grouping-templates',
@@ -10,6 +12,8 @@ import { GroupingHeaderColumnTemplateExampleComponent } from './group-header-col
     LiveExampleComponent,
     GroupingHeaderTemplateExampleComponent,
     GroupingHeaderColumnTemplateExampleComponent,
+    GroupingFooterTemplateExampleComponent,
+    GroupingFooterColumnTemplateExampleComponent,
   ],
   templateUrl: './templates.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -500,6 +504,149 @@ export class GroupingTemplatesComponent {
                   group header column temp / column header: {{ column.header }}, group key: {{ group.key }}
                 </ng-template>
               </d-grid-column>
+              <d-grid-column field="date" header="date" [width]="100" [sortable]="true"></d-grid-column>
+            </d-grid>
+          `,
+      lang: 'html',
+      showLineNumbers: true,
+    },
+    {
+      fileName: 'row.ts',
+      code: `
+          export interface Row {
+            id: number;
+            name: string;
+            email: string;
+            active: boolean;
+            date: string;
+          }
+          `,
+      lang: 'typescript',
+      showLineNumbers: true,
+    },
+    this.groupHeaderCodeFiles[3],
+  ];
+
+  groupFooterCodeFiles: CodeFile[] = [
+    {
+      fileName: 'example.ts',
+      code: `
+          import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+          import { D_GRID } from 'd-grid-angular';
+          import { Row } from '../row';
+          import { sampleData } from '../data';
+          import { delay, of } from 'rxjs';
+
+          @Component({
+            selector: 'docs-adv-features-grouping-footer-template-example',
+            imports: [D_GRID],
+            templateUrl: './group-footer-example.html',
+            changeDetection: ChangeDetectionStrategy.OnPush,
+          })
+          export class GroupingFooterTemplateExampleComponent implements OnInit {
+            gridData = signal<Row[]>([]);
+            gridDataHttp = of(sampleData).pipe(delay(1000));
+
+            ngOnInit(): void {
+              this.gridDataHttp.subscribe((data) => {
+                this.gridData.set([...data]);
+              });
+            }
+          }      
+  `,
+      lang: 'typescript',
+      showLineNumbers: true,
+      selected: true,
+    },
+    {
+      fileName: 'example.html',
+      code: `
+            <d-grid
+              [style.height.%]="87"
+              [data]="gridData()"
+              [asyncData]="true"
+              [groupable]="{ showFooter: true, stickyHeader: true, groups: [{ field: 'name', dir: 'desc' }] }"
+            >
+              <d-grid-column field="id" header="id" [width]="50" [sortable]="true"></d-grid-column>
+              <d-grid-column field="name" header="name" [width]="100" [sortable]="true">
+                <ng-template dGridGroupFooterTemplate let-group let-column="column">
+                  group footer temp / column header: {{ column.header }}, group key: {{ group.key }}
+                </ng-template>
+              </d-grid-column>
+              <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
+              <d-grid-column field="active" header="active" [width]="100" [sortable]="true"></d-grid-column>
+              <d-grid-column field="date" header="date" [width]="100" [sortable]="true"></d-grid-column>
+            </d-grid>
+          `,
+      lang: 'html',
+      showLineNumbers: true,
+    },
+    {
+      fileName: 'row.ts',
+      code: `
+          export interface Row {
+            id: number;
+            name: string;
+            email: string;
+            active: boolean;
+            date: string;
+          }
+          `,
+      lang: 'typescript',
+      showLineNumbers: true,
+    },
+    this.groupHeaderCodeFiles[3],
+  ];
+
+  groupFooterColumnCodeFiles: CodeFile[] = [
+    {
+      fileName: 'example.ts',
+      code: `
+          import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+          import { D_GRID } from 'd-grid-angular';
+          import { Row } from '../row';
+          import { sampleData } from '../data';
+          import { delay, of } from 'rxjs';
+
+          @Component({
+            selector: 'docs-adv-features-grouping-footer-column-template-example',
+            imports: [D_GRID],
+            templateUrl: './group-footer-column-example.html',
+            changeDetection: ChangeDetectionStrategy.OnPush,
+          })
+          export class GroupingFooterColumnTemplateExampleComponent implements OnInit {
+            gridData = signal<Row[]>([]);
+            gridDataHttp = of(sampleData).pipe(delay(1000));
+
+            ngOnInit(): void {
+              this.gridDataHttp.subscribe((data) => {
+                this.gridData.set([...data]);
+              });
+            }
+          }      
+  `,
+      lang: 'typescript',
+      showLineNumbers: true,
+      selected: true,
+    },
+    {
+      fileName: 'example.html',
+      code: `
+            <d-grid
+              [style.height.%]="87"
+              [data]="gridData()"
+              [asyncData]="true"
+              [groupable]="{ showFooter: true, stickyHeader: true, groups: [{ field: 'name', dir: 'desc' }] }"
+              [resizable]="true"
+            >
+              <d-grid-column field="id" header="id" [width]="50" [sortable]="true"></d-grid-column>
+              <d-grid-column field="name" header="name" [width]="100" [sortable]="true">
+                <ng-template dGridGroupFooterColumnTemplate let-group let-column="column">
+                  group footer temp / column header: {{ column.header }}, group key: {{ group.key }}
+                </ng-template>
+              </d-grid-column>
+              <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
+              <d-grid-column field="active" header="active" [width]="100" [sortable]="true"></d-grid-column>
               <d-grid-column field="date" header="date" [width]="100" [sortable]="true"></d-grid-column>
             </d-grid>
           `,

@@ -43,7 +43,7 @@
 <ng-template #headerTemplate>
   <docs-adv-features-grouping-header-template-example></docs-adv-features-grouping-header-template-example>
 </ng-template>
-<h2>Header column templates</h2>
+<h2>Group header column template</h2>
 <p>
   The <b><code>DGridGroupHeaderColumnTemplateDirective</code></b> is rendered in the group header
   cell of the corresponding column. It is especially useful to show an aggregate value for given
@@ -56,4 +56,32 @@
 ></live-example>
 <ng-template #headerColumnTemplate>
   <docs-adv-features-grouping-header-column-template-example></docs-adv-features-grouping-header-column-template-example>
+</ng-template>
+<h2>Group footer template</h2>
+<p>
+  The <b><code>DGridGroupFooterTemplateDirective</code></b> is rendered in the group footer. To use
+  the footer template, you have to set the <b><code>showFooter</code></b> option of the
+  <b><code>DGridGroupingSettings</code></b> configuration object to <b><code>true</code></b
+  >.
+</p>
+<h3>Example</h3>
+<live-example [exampleTemplate]="footerTemplate" [codeFiles]="groupFooterCodeFiles"></live-example>
+<ng-template #footerTemplate>
+  <docs-adv-features-grouping-footer-template-example></docs-adv-features-grouping-footer-template-example>
+</ng-template>
+<h2>Group footer column template</h2>
+<p>
+  The <b><code>DGridGroupFooterColumnTemplateDirective</code></b> is rendered in the group footer
+  cell of the corresponding column. It is especially useful to show an aggregate value for specific
+  columns. To use the footer template, you have to set the <b><code>showFooter</code></b> option of
+  the <b><code>DGridGroupingSettings</code></b> configuration object to <b><code>true</code></b
+  >.
+</p>
+<h3>Example</h3>
+<live-example
+  [exampleTemplate]="footerColumnTemplate"
+  [codeFiles]="groupFooterColumnCodeFiles"
+></live-example>
+<ng-template #footerColumnTemplate>
+  <docs-adv-features-grouping-footer-column-template-example></docs-adv-features-grouping-footer-column-template-example>
 </ng-template>
