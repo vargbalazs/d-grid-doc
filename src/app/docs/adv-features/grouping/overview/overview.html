@@ -26,6 +26,24 @@
     >: <b><code>true</code></b> or <b><code>false</code></b
     >, indicating, whether we want the group headers to be sticky, if we scroll the grid
   </li>
+  <li>
+    <b><code>groups</code></b
+    >: used for predefined grouping settings for the grid
+    <ul>
+      <li>
+        <b><code>field</code></b
+        >: data field of the given column
+      </li>
+      <li>
+        <b><code>dir</code></b
+        >: sort direction
+      </li>
+      <li>
+        <b><code>compareFn</code></b
+        >: custom compare function
+      </li>
+    </ul>
+  </li>
 </ul>
 <h2>Example</h2>
 <live-example [exampleTemplate]="groupingOverview" [codeFiles]="codeFiles"></live-example>
