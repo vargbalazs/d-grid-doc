@@ -54,5 +54,5 @@ export const menuItems: MenuItem[] = [
       { text: 'Templates', routePath: 'docs/grouping-templates' },
     ],
   },
-  { text: 'Aggregation', items: [{ text: 'Overview' }] },
+  { text: 'Aggregation', items: [{ text: 'Overview', routePath: 'docs/aggregation-overview' }] },
 ];

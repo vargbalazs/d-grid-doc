@@ -1,0 +1,41 @@
+<h1>Aggregation overview</h1>
+<p>You can show aggregates either in group header or group footer templates.</p>
+<p>Currently the following aggregates are supported:</p>
+<ul>
+  <li>
+    <b><code>sum</code></b
+    >: calculates the total of all numeric values in the group
+  </li>
+  <li>
+    <b><code>count</code></b
+    >: returns the number of items in the group
+  </li>
+  <li>
+    <b><code>min</code></b
+    >: finds the smallest value in the group
+  </li>
+  <li>
+    <b><code>max</code></b
+    >: finds the largest value in the group
+  </li>
+</ul>
+<p>
+  To start with aggregation you have to define an array of
+  <b><code>DGridGroupAggregate</code></b> first:
+</p>
+<code-block [code]="aggregates" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  After that assign this array to the <b><code>groupable</code></b> property of the grid:
+</p>
+<code-block [code]="groupable" language="typescript" [showLineNumbers]="true"></code-block>
+<p>
+  If this is done, then use in a group header/footer or header column/footer column template the
+  <b><code>value</code></b> property of the <b><code>aggregate</code></b> object to show the
+  calculated value:
+</p>
+<code-block [code]="value" language="html" [showLineNumbers]="true"></code-block>
+<h2>Example</h2>
+<live-example [exampleTemplate]="aggregationOverview" [codeFiles]="codeFiles"></live-example>
+<ng-template #aggregationOverview>
+  <docs-adv-features-aggregation-overview-example></docs-adv-features-aggregation-overview-example>
+</ng-template>
