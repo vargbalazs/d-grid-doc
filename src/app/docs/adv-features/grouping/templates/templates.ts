@@ -2,10 +2,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LiveExampleComponent } from '../../../../components/example/live-example';
 import { GroupingHeaderTemplateExampleComponent } from './group-header-example/group-header-example';
 import { CodeFile } from '../../../../interfaces/code-file';
+import { GroupingHeaderColumnTemplateExampleComponent } from './group-header-column-example/group-header-column-example';
 
 @Component({
   selector: 'docs-adv-features-grouping-templates',
-  imports: [LiveExampleComponent, GroupingHeaderTemplateExampleComponent],
+  imports: [
+    LiveExampleComponent,
+    GroupingHeaderTemplateExampleComponent,
+    GroupingHeaderColumnTemplateExampleComponent,
+  ],
   templateUrl: './templates.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -440,5 +445,81 @@ export class GroupingTemplatesComponent {
       lang: 'typescript',
       showLineNumbers: true,
     },
+  ];
+
+  groupHeaderColumnCodeFiles: CodeFile[] = [
+    {
+      fileName: 'example.ts',
+      code: `
+          import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+          import { D_GRID } from 'd-grid-angular';
+          import { Row } from '../row';
+          import { sampleData } from '../data';
+          import { delay, of } from 'rxjs';
+
+          @Component({
+            selector: 'docs-adv-features-grouping-header-column-template-example',
+            imports: [D_GRID],
+            templateUrl: './group-header-column-example.html',
+            changeDetection: ChangeDetectionStrategy.OnPush,
+          })
+          export class GroupingHeaderColumnTemplateExampleComponent implements OnInit {
+            gridData = signal<Row[]>([]);
+            gridDataHttp = of(sampleData).pipe(delay(1000));
+
+            ngOnInit(): void {
+              this.gridDataHttp.subscribe((data) => {
+                this.gridData.set([...data]);
+              });
+            }
+          }
+  `,
+      lang: 'typescript',
+      showLineNumbers: true,
+      selected: true,
+    },
+    {
+      fileName: 'example.html',
+      code: `
+            <d-grid
+              [style.height.%]="87"
+              [data]="gridData()"
+              [asyncData]="true"
+              [groupable]="{ showFooter: true, stickyHeader: true, groups: [{ field: 'name', dir: 'desc' }] }"
+              [resizable]="true"
+            >
+              <d-grid-column field="id" header="id" [width]="50" [sortable]="true"></d-grid-column>
+              <d-grid-column field="name" header="name" [width]="100" [sortable]="true">
+                <ng-template dGridGroupHeaderTemplate let-group let-column="column">
+                  group header temp / column header: {{ column.header }}, group key: {{ group.key }}
+                </ng-template>
+              </d-grid-column>
+              <d-grid-column field="email" header="email" [width]="150" [sortable]="true"></d-grid-column>
+              <d-grid-column field="active" header="active" [width]="100" [sortable]="true">
+                <ng-template dGridGroupHeaderColumnTemplate let-group let-column="column">
+                  group header column temp / column header: {{ column.header }}, group key: {{ group.key }}
+                </ng-template>
+              </d-grid-column>
+              <d-grid-column field="date" header="date" [width]="100" [sortable]="true"></d-grid-column>
+            </d-grid>
+          `,
+      lang: 'html',
+      showLineNumbers: true,
+    },
+    {
+      fileName: 'row.ts',
+      code: `
+          export interface Row {
+            id: number;
+            name: string;
+            email: string;
+            active: boolean;
+            date: string;
+          }
+          `,
+      lang: 'typescript',
+      showLineNumbers: true,
+    },
+    this.groupHeaderCodeFiles[3],
   ];
 }
