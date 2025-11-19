@@ -45,10 +45,33 @@
     </ul>
   </li>
 </ul>
+<p>
+  If we want to define predefined group settings for a colum, we can use the
+  <b><code>grouping</code></b> input property on a column, which takes a
+  <b><code>DGridColumnGroupingSettings</code></b> object. This object has a mandatory
+  <b><code>field</code></b> property, and two optional properties (<b><code>dir</code></b> for sort
+  direction and <b><code>compareFn</code></b> for a custom comparing function)
+</p>
 <h2>Priorities</h2>
 <p>When grouping, the following applies:</p>
 <ul>
-  <li></li>
+  <li>
+    If we group by a column and this column has a header template, then it will be rendered at the
+    beginning of the header. Which means, it will override any header template for the first column,
+    if set.
+  </li>
+  <li>
+    If a column has a header template, but also a column header template, and we group by this
+    column, the header template will be rendered.
+  </li>
+  <li>
+    If a column has a footer template or column footer template and we group by this column, then it
+    will override any footer template for the first column, if set.
+  </li>
+  <li>
+    If a column has no footer template or column footer template, but the first column has any
+    footer template, then this footer template will be rendered.
+  </li>
 </ul>
 <h2>Example</h2>
 <live-example [exampleTemplate]="groupingOverview" [codeFiles]="codeFiles"></live-example>
