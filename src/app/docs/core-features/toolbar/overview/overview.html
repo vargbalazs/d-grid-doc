@@ -1,0 +1,15 @@
+<h1>Toolbar</h1>
+<p>
+  If you want to show a toolbar above the grid, simply set <b><code>showToolbar</code></b> to
+  <b><code>true</code></b
+  >. With the help of <b><code>DGridToolbarTemplateDirective</code></b> you can add any element to
+  the toolbar. For spacing between them use the <b><code>d-grid-spacer</code></b> component. As per
+  default this component distributes the space evenly between the elements. If we set the
+  <b><code>width</code></b> property to a valid css string, then this width will be applied between
+  the elements.
+</p>
+<h2>Example</h2>
+<live-example [exampleTemplate]="toolbarOverview" [codeFiles]="codeFiles"></live-example>
+<ng-template #toolbarOverview>
+  <docs-core-features-toolbar-overview-example></docs-core-features-toolbar-overview-example>
+</ng-template>

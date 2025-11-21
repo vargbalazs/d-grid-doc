@@ -45,4 +45,8 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./adv-features/aggregation/aggregation.routes').then((m) => m.routes),
   },
+  {
+    path: '',
+    loadChildren: () => import('./core-features/toolbar/toolbar.routes').then((m) => m.routes),
+  },
 ];
