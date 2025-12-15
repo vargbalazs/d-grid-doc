@@ -49,4 +49,9 @@ export const routes: Routes = [
     path: '',
     loadChildren: () => import('./core-features/toolbar/toolbar.routes').then((m) => m.routes),
   },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./core-features/navigation/navigation.routes').then((m) => m.routes),
+  },
 ];

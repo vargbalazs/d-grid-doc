@@ -45,6 +45,7 @@ export const menuItems: MenuItem[] = [
   },
   { text: 'Paging', items: [{ text: 'Pager', routePath: 'docs/paging-pager' }] },
   { text: 'Selection', items: [{ text: 'Row Selection' }] },
+  { text: 'Navigation', items: [{ text: 'Overview', routePath: 'docs/navigation-overview' }] },
   { text: 'Editing', items: [{ text: 'Overview' }] },
   { text: 'Toolbar', items: [{ text: 'Overview', routePath: 'docs/toolbar-overview' }] },
   { text: 'Advanced features', isTitle: true },
