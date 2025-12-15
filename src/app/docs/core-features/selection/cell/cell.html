@@ -1,0 +1,32 @@
+<h1>Cell selection</h1>
+<h2>Default settings</h2>
+<p>
+  As per default selection is enabled. Which means, you can select any cell with the
+  <b><code>mouse</code></b> (hold and drag) or with <b><code>Shift+Arrow keys</code></b
+  >.
+</p>
+<p>
+  If you want to change this behavior, just assign a
+  <b><code>DGridSelectionSettings</code></b> object to the <b><code>selectable</code></b> property
+  of the grid. Within this object you can fine tune the selection with this properties:
+</p>
+<ul>
+  <li>
+    <b><code>withKeyboard</code></b
+    >: takes a <b><code>boolean</code></b> value, enables/disables selection with the keyboard
+  </li>
+  <li>
+    <b><code>withMouse</code></b
+    >: takes a <b><code>boolean</code></b> value, enables/disables selection with the mouse
+  </li>
+</ul>
+<p>
+  Please note, if navigation is not allowed (<b><code>navigable</code></b> is set to
+  <b><code>false</code></b
+  >) selection with the keyboard won't work, regardless the selection settings.
+</p>
+<h2>Example</h2>
+<live-example [exampleTemplate]="selcell" [codeFiles]="codeFiles"></live-example>
+<ng-template #selcell>
+  <docs-core-features-selection-cell-example></docs-core-features-selection-cell-example>
+</ng-template>

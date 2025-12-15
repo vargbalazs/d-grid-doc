@@ -1,0 +1,13 @@
+<d-grid
+  [style.height.%]="87"
+  [data]="gridData()"
+  [asyncData]="true"
+  filterable="excel"
+  [selectable]="{ withKeyboard: true, withMouse: true }"
+>
+  <d-grid-column field="id" header="id" [width]="50" [sortable]="true"> </d-grid-column>
+  <d-grid-column field="name" header="name" [width]="100" [sortable]="true"></d-grid-column>
+  <d-grid-column field="email" header="email" [width]="150" [sortable]="true"> </d-grid-column>
+  <d-grid-column field="active" header="active" [width]="100" [sortable]="true"> </d-grid-column>
+  <d-grid-column field="date" header="date" [width]="100" [sortable]="true"> </d-grid-column>
+</d-grid>

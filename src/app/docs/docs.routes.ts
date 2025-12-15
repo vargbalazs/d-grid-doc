@@ -54,4 +54,8 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./core-features/navigation/navigation.routes').then((m) => m.routes),
   },
+  {
+    path: '',
+    loadChildren: () => import('./core-features/selection/selection.routes').then((m) => m.routes),
+  },
 ];
